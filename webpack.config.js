@@ -3,7 +3,7 @@ const path = require("path");
 module.exports = {
     entry: './frontend/stagelite.jsx',
     output: {
-        path: path.resolve(__dirname), //put in root of tree
+        path: path.resolve(__dirname, 'app', 'assets', 'javascripts'), //put in root of tree
         filename: 'bundle.js'
     },
     devtool: 'source-map', //gives linen of code for errors

@@ -1,5 +1,5 @@
 export const login = user => {
-    $.ajax({
+   return $.ajax({
         url: `/api/session`,
         method: 'POST',
         data: { user }
@@ -7,15 +7,15 @@ export const login = user => {
 }
 
 export const signup = user => {
-    $.ajax({
-        url: `/api/user`,
+    return $.ajax({
+        url: `/api/users`,
         method: `POST`,
         data: { user }
     })
 }
 
 export const logout = () => {
-    $.ajax({
+    return $.ajax({
         url: `/api/session`,
         method: 'DELETE'
     })
