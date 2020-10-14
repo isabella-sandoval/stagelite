@@ -25,7 +25,6 @@
     "lib": "lib",
     "test": "test"
   },
-
   "engines": {
     "node": "10.13.0",
     "npm": "6.4.1"
@@ -34,7 +33,6 @@
     "postinstall": "webpack",
     "start": "webpack --watch --mode=development"
   },
-
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -42,4 +40,3 @@
     "webpack-cli": "^4.0.0"
   }
 }
-

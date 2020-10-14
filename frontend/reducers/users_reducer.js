@@ -1,4 +1,4 @@
-import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
+import { RECEIVE_CURRENT_USER } from '../actions/session_action';
 
 
 export const UsersReducer = (oldState = {}, action) => {
