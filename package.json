@@ -35,8 +35,6 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "webpack-cli": "^4.0.0"
-  }
+  "license": "ISC"
+  
 }
