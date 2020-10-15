@@ -27,9 +27,8 @@ class SessionForm extends React.Component{
     render() {
         return (
             <div className="session-form-container">
-               
                 <form onSubmit={this.handleSubmit} className="login-form">
-                    
+                  
                     <h2 className="form-header">Please {this.props.formType} or {this.props.navLink}</h2>
 
                                 <input type="text"
