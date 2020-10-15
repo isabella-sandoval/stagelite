@@ -5,6 +5,7 @@ import { receiveErrors } from '../../actions/session_action';
 import { login } from '../../actions/session_action';
 import SessionForm from './session_form';
 
+
 const mSTP = (state) => {
     return {
         errors: state.errors.session,

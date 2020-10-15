@@ -6,7 +6,7 @@ class Api::UsersController < ApplicationController
             login(@user)
             render :show
         else
-            render json:['Username is taken'], status:401
+            render json:['Please enter a valid email and password'], status:401
         end
     end
 

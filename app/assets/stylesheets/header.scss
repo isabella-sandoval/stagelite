@@ -1,0 +1,22 @@
+
+.homepage{
+    font: -webkit-small-control;
+    font-size: 8px;
+    display: flex;
+    flex-direction: row-reverse;
+    font-weight: 600;   
+    
+}
+.homepage > * {
+    text-decoration: none;  
+    margin-left: 15px;
+    margin-right: 13px;
+    margin-top: 18px;
+    color: #39364f;
+    display: flex;
+    cursor: pointer;
+}
+
+.create-event{
+    color:#3659e3
+}

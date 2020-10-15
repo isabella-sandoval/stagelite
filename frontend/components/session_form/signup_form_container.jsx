@@ -9,7 +9,8 @@ const mSTP = ({ errors }) => {
     return {
         errors: errors.session,
         formType: 'sign up',
-        navLink: <Link className="login" to="/login">log in</Link>
+        navLink: <Link className="login" to="/login">log in</Link>,
+        demoUser: { email: 'demo@user', password: 'password'},
     };
 };
 
@@ -17,6 +18,7 @@ const mDTP = dispatch => {
     return {
         processForm: (user) => dispatch(signup(user)),
         receiveErrors: errors => dispatch(receiveErrors(errors))
+        
     };
 };
 

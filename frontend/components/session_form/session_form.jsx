@@ -1,5 +1,7 @@
 import React from 'react';
 import { receiveErrors } from '../../actions/session_action';
+import { Link } from 'react-router-dom';
+
 
 
 class SessionForm extends React.Component{
@@ -25,34 +27,43 @@ class SessionForm extends React.Component{
     }
 
     render() {
+        
         return (
-            <div className="session-form-container">
-                <form onSubmit={this.handleSubmit} className="login-form">
-                  
-                    <h2 className="form-header">Please {this.props.formType} or {this.props.navLink}</h2>
 
+            <div className="session-form-container">
+    
+                <form onSubmit={this.handleSubmit} className="login-form">
+                   
+                    <h2 className="form-header">Please {this.props.formType} or {this.props.navLink}</h2>
+                                
                                 <input type="text"
                                 value={this.state.email}
                                 onChange={this.update('email')}
                                 className="email-input"
+                                placeholder="email"
                                 />
-                       
-                        
+                                
+                               
                                 <input type="password"
                                 value={this.state.password}
                                 onChange={this.update('password')}
                                 className="password-input"
-                            />
+                                placeholder="password"
+                                />
                         
 
                         <input className="session-submit" type="submit" value={this.props.formType} />
-                    
+
                 </form>
-                <div>{this.props.errors}</div>
+                <div className='error-messages'>{this.props.errors}</div>
+                {/* <Link =''>demo user</Link> */}
             </div>
         );
+        
     }
 
 }
 
 export default SessionForm;
+
+
