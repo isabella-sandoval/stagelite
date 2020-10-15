@@ -1,1 +1,56 @@
-.session-form-container { color: blue}
+
+
+.form-header {
+    color: black;
+    
+    letter-spacing: .75px;
+    font-size: 20px;
+    line-height: 2.25rem;
+    letter-spacing: .75px;
+    margin-right: -.75px;
+    font-weight: 700;
+    
+}
+
+.email-input, .password-input {
+    margin: 8px 0 10px;
+    text-align: left;
+    color: #363a43;
+    display: flex;
+    height: 25px;
+   
+}
+
+
+.session-form-container {
+    
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+    width: 440px;
+    padding-top: 100px;
+    
+    // border: orange;
+    // border-style: solid;
+    // border-width: 40px;
+}
+
+.session-submit{
+    background-color: #d1410c;
+    border-color: #d1410c;
+    height: 30px;
+    display: block;
+    border-radius: 5px;
+    color: whitesmoke;
+}
+
+.session-submit:hover {
+    background-color: #f05637;
+    border-color: #f05637;
+    transition: 0.3s;
+    cursor: pointer;
+}

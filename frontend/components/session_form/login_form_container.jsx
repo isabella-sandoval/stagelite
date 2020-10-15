@@ -8,8 +8,8 @@ import SessionForm from './session_form';
 const mSTP = (state) => {
     return {
         errors: state.errors.session,
-        formType: 'login',
-        navLink: <Link className="to-signup" to="/signup">sign up instead</Link>
+        formType: 'log in',
+        navLink: <Link className="to-signup" to="/signup">sign up</Link>
     };
 };
 
