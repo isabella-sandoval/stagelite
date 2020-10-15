@@ -1,6 +1,6 @@
 import React from 'react';
 import { receiveErrors } from '../../actions/session_action';
-import s-logo from '../../../assets/images/s-logo'
+
 
 class SessionForm extends React.Component{
     constructor(props){
@@ -27,7 +27,7 @@ class SessionForm extends React.Component{
     render() {
         return (
             <div className="session-form-container">
-                <img src={s-logo}/>
+               
                 <form onSubmit={this.handleSubmit} className="login-form">
                     
                     <h2 className="form-header">Please {this.props.formType} or {this.props.navLink}</h2>
