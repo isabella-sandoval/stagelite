@@ -22,6 +22,7 @@ class SessionForm extends React.Component{
     }
 
     handleSubmit(e) {
+
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user).then(success => { this.props.history.push("/") })
@@ -29,7 +30,7 @@ class SessionForm extends React.Component{
 
     demo(){
         const demoUser = {email: 'demo@user', password: 'password'};
-        this.props.processForm(demoUser).then(success => { this.props.history.push("/") })
+        this.props.processloginForm(demoUser).then(success => { this.props.history.push("/") })
     }
 
 
