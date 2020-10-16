@@ -32,12 +32,6 @@
 
 
 
-.fas fas fa-pencil-alt {
-    position:absolute;
-    height: 10px;
-    width: 10px;
-    
-}
 
 .login-form {
     display: flex;
@@ -68,3 +62,18 @@
     cursor: pointer;
 }
 
+.s-logo {
+    font-family: 'Warnes', cursive;
+    font-size: 40px;
+    color: #f05637;
+    padding-bottom: 17px;
+    font-weight: 500;
+}
+
+.demo-button{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+    margin-top: 0%;
+}

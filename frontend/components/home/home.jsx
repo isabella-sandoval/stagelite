@@ -8,13 +8,21 @@ class HomePage extends React.Component {
     }
     render() {
         return (
-            <div className="homepage">
+            <div className="homepage-container">
+                <div className="homepage">
 
-                <Link className="sign-in-link" to="/signup">Sign In</Link>
-                <div className="create-event">Create Event</div>
-                <div className="help-dropdown">Help</div>
+                    <div className="stagelite-div">
+                        <Link to="/" className="stagelite-logo">Stagelite</Link>
+                    </div>
 
-                <img src="Stagelite.png" className="logo"/>
+                    <div className="nav-buttons">
+                        <div className="help-dropdown">Help</div>
+                        <div className="create-event">Create Event</div>
+                        <Link className="sign-in-link" to="/signup">Sign In</Link>
+                    </div>
+
+                </div>
+                <hr/>
             </div>
         );
     }

@@ -3,10 +3,41 @@
     font: -webkit-small-control;
     font-size: 8px;
     display: flex;
-    flex-direction: row-reverse;
-    font-weight: 600;   
+    justify-content: space-between;
+    font-weight: 600;  
     
 }
+
+.create-event{
+    color:#3659e3
+}
+
+
+.stagelite-div{
+    display:flex;
+}
+
+.nav-buttons{
+    display:flex;
+    margin: 20px;
+}
+
+.stagelite-logo{
+    font-family: 'Warnes', cursive;
+    font-size: 15px;
+    font-weight: 600;
+    color: #f05637;
+    display: flex;
+}
+
+
+hr {
+    width: 100%;
+    text-align:left;
+    margin-left:0;
+    color: gray
+}
+
 .homepage > * {
     text-decoration: none;  
     margin-left: 15px;
@@ -15,8 +46,5 @@
     color: #39364f;
     display: flex;
     cursor: pointer;
-}
-
-.create-event{
-    color:#3659e3
+    
 }

@@ -9,10 +9,10 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 const App = () => (
         
         <div className="app">
+            <HomeContainer/>
             <Switch>
                 <Route path='/login' component={LoginFormContainer} />
                 <Route path='/signup' component={SignupFormContainer} />
-                <Route path='/' component={HomeContainer} />
                 
             </Switch>
         </div>
