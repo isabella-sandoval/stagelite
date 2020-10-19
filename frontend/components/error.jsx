@@ -9,7 +9,7 @@ class Error extends React.Component{
 
     render(){
         return(
-            <div className='page-does-not-exist'>This page does not exist. Return to { this.props.homepage }</div>
+            <h2 className='page-does-not-exist'>This page does not exist. Return to  { this.props.homepage } </h2>
         )
     }
 }
@@ -18,7 +18,6 @@ class Error extends React.Component{
 const mSTP = (state) => {
     return {
         homepage: <Link className="to-homepage" to="/"> homepage</Link>
-    
     };
 };
 
