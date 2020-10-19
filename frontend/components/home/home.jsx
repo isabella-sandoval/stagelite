@@ -33,7 +33,7 @@ const HomePage = ({ currentUser, logout }) => {
                         <div className="nav-buttons">
                             <div className="help-dropdown">Help</div>
                             <div className="create-event">Create Event</div>
-                            <Link className="sign-in-link" to="/signup">Sign In</Link>
+                            <Link className="sign-in-link" to="/login">Sign In</Link>
                         </div>
 
                     </div>

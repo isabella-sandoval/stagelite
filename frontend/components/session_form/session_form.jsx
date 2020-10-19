@@ -16,20 +16,21 @@ class SessionForm extends React.Component{
     }
 
     update(field) {
+        // debugger
         return e => {
-            this.setState({ [field]: e.target.value })
+            this.setState({ [field]: e.currentTarget.value })
         }
     }
 
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user).then(success => { this.props.history.push("/") })
+        this.props.processForm(user)
     }
 
     demo(){
         const demoUser = {email: 'demo@user', password: 'password'};
-        this.props.processloginForm(demoUser).then(success => { this.props.history.push("/") })
+        this.props.processloginForm(demoUser);
         
     }
 
