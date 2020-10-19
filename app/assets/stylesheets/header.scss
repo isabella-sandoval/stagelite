@@ -6,20 +6,28 @@
     justify-content: space-between;
     font-weight: 600;  
     
+    
 }
 
 .create-event{
     color:#3659e3
 }
 
+.sign-in-link{
+    text-decoration: none
 
+}
 .stagelite-div{
     display:flex;
 }
 
-.nav-buttons{
+.nav-buttons > *{
     display:flex;
-    margin: 20px;
+    margin: 10px;
+    
+}
+.nav-buttons > *:hover {
+    color: black;
 }
 
 .stagelite-logo{
@@ -31,20 +39,48 @@
 }
 
 
+
+.homepage > * {
+    text-decoration: none;  
+    margin-left: 20px;
+    margin-right: 17px;
+    margin-top: 16px;
+    color: #39364f;
+    display: flex;
+    cursor: pointer;
+    color: gray
+    
+}
+
+.sign-out-button{
+    background: transparent;
+    box-shadow: 0px 0px 0px transparent;
+    border: 0px solid transparent;
+    text-shadow: 0px 0px 0px transparent;
+    font: -webkit-small-control;
+    font-size: 8px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 470;  
+    cursor: pointer;
+    margin-top: 5%;
+    margin-left: 5px;
+    padding-left: 2px;
+    color: gray
+}
+
+.sign-out-button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+
 hr {
     width: 100%;
     text-align:left;
     margin-left:0;
-    color: gray
-}
-
-.homepage > * {
-    text-decoration: none;  
-    margin-left: 15px;
-    margin-right: 13px;
-    margin-top: 18px;
-    color: #39364f;
-    display: flex;
-    cursor: pointer;
-    
+    color: #eeedf2;
+    border-style: solid;
+    border-top: none;
+    border-width: .4px;
 }
