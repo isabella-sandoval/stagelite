@@ -6,7 +6,7 @@ class Api::UsersController < ApplicationController
             login(@user)
             render 'api/users/show'
         else
-            render json:['Please enter a valid email and password'], status:401
+            render json:['This username has already been taken'], status:422
         end
     end
 

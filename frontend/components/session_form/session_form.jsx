@@ -15,6 +15,11 @@ class SessionForm extends React.Component{
         this.demo = this.demo.bind(this);
     }
 
+    componentDidMount() {
+        this.props.clearErrors();
+        // document.addEventListener("keydown", this.escFunction);
+    }
+
     update(field) {
         // debugger
         return e => {
