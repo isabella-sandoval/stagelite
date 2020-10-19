@@ -1,14 +1,24 @@
-import Navigation from './navigation';
 import { connect } from 'react-redux';
-import { logout } from '../../actions/session_actions';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { signup, logout } from '../../actions/session_action';
 
-const mapStateToProps = ({ session, entities: { users }}) => ({
-  currentUser: users[session.id]
+import Navigation from './navigation';
+
+
+const mSTP = state => {
+
+  return (
+    {
+      navLink: <Link className="to-signup" to="/signup">sign up</Link>,
+      currentUser: state.entities.users[state.session.id]
+    }
+  )
+};
+
+const mDTP = dispatch => ({
+  processForm: (user) => dispatch(signup(user)),
+  logout: () => dispatch(logout())
 });
 
-const mapDispatchToProps = dispatch => ({
-  logout: () => dispatch(logout()),
-  login: (user) => dispatch(login(user))
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Navigation);
+export default connect(mSTP, mDTP)(Navigation);

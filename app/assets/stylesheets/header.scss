@@ -85,3 +85,13 @@ hr {
     border-top: none;
     border-width: 1px;
 }
+
+.page-does-not-exist{
+    display: flex;
+    justify-content: center;
+    font: -webkit-small-control;
+    font-size: 17px;
+    font-weight: 500;  
+    padding-top: 12%;
+    color: gray;
+}
