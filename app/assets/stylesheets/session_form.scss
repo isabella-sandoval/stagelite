@@ -13,32 +13,43 @@
 }
 
 .form-header {
-    color: black;
+    color: #363a43;
     letter-spacing: .75px;
     font-size: 20px;
     line-height: 2.25rem;
     letter-spacing: .75px;
     margin-right: -.75px;
-    margin-bottom: -5px;
+    margin-bottom: 2%;
     font-weight: 700;
-    
 }
+
+.to-login, .to-signup {
+    text-decoration: none;
+    color: #363a43;
+}
+
+.to-login:hover, .to-signup:hover {
+    color: grey;
+}
+
 
 
 .email-input, .password-input {
     margin: 8px 0 10px;
     text-align: left;
-    color: #363a43;
+    color:#363a43;
     display: flex;
     height: 25px;
-    
+     
 }
+
 
 
 
 .error-messages {
     display: flex;
     flex-direction: column;
+   
     margin: 15px;
     text-align: center;
     color: #f05637;
@@ -92,15 +103,23 @@
     border: 0px solid transparent;
     text-shadow: 0px 0px 0px transparent;
     cursor: pointer;
-    color: gray
+    color: #363a43
 
 }
 
 .demo-button:hover{
-    color:black;
+    color:gray;
 }
 
 .demo-button:focus {
   outline: none;
   box-shadow: none;
+}
+
+.email-input:focus, .password-input:focus {
+    outline: none !important;
+    border: 1.5px solid #4667e5;
+    transition: 0.2s;
+    // box-shadow: 0 0 4px #719ECE;
+    // box-shadow: 0 0 10px #719ECE;
 }
