@@ -35,8 +35,7 @@ class SessionForm extends React.Component{
 
     demo(){
         const demoUser = {email: 'demo@user', password: 'password'};
-        this.props.processloginForm(demoUser);
-        
+        this.props.processloginForm(demoUser);   
     }
 
 
@@ -44,7 +43,7 @@ class SessionForm extends React.Component{
         const errors = this.props.errors;
         return (
             <ul>
-                {errors.map((error, i) => ( <li key={`error-${i}`}>{error}</li>))}
+                {errors.map((error, i) => (<li key={`error-${i}`}>{error}</li>))}
             </ul>
         );
     }

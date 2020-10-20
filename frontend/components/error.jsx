@@ -17,7 +17,7 @@ class Error extends React.Component{
 
 const mSTP = (state) => {
     return {
-        homepage: <Link className="to-homepage" to="/"> homepage</Link>
+        homepage: <Link className="to-homepage" to="/"> homepage.</Link>
     };
 };
 

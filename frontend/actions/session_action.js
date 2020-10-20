@@ -7,10 +7,11 @@ export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 
 
 export const receiveCurrentUser = currentUser => {
-    return{
-    type: RECEIVE_CURRENT_USER,
-    currentUser
-}}; 
+    return {
+        type: RECEIVE_CURRENT_USER,
+        currentUser
+    }
+};
 
 export const logoutCurrentUser = () => ({
     type: LOGOUT_CURRENT_USER,
@@ -47,7 +48,7 @@ export const logout = () => dispatch => (
     ))
 );
 
-export const clearErrors = () => dispatch => 
+export const clearErrors = () => dispatch =>
     dispatch(receiveErrors([]));
 
 

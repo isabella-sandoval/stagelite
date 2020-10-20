@@ -1,7 +1,6 @@
-
 import {
     RECEIVE_CURRENT_USER,
-    LOGOUT_CURRENT_USER,
+    LOGOUT_CURRENT_USER
 } from '../actions/session_action';
 
 const _nullUser = Object.freeze({
@@ -16,8 +15,8 @@ const sessionReducer = (oldState = _nullUser, action) => {
         case RECEIVE_CURRENT_USER:
             // nextState[id] = action.currentUser.id
             // return nextState
-            return {id: action.currentUser.id}
-            
+            return { id: action.currentUser.id }
+
         case LOGOUT_CURRENT_USER:
             return _nullUser;
 

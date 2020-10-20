@@ -1,0 +1,1 @@
+json.extract! @event, :title, :date, :time, :age_restriction, :organizer_id
