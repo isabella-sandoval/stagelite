@@ -10,6 +10,7 @@ class CreateEvents < ActiveRecord::Migration[5.2]
       t.float :longitude, null:false
       t.float :price, null:false
       t.integer :capacity, null:false
+      t.integer :quantity, null:false
       t.boolean :at_capacity, null:false
       t.boolean :age_restriction, null:false
       t.string :ticket_link, null:false

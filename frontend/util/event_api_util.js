@@ -4,28 +4,39 @@ export const fetchEvent =(id) => {
     return $.ajax({
         method: `GET`,
         url: `/api/events/${id}`
-    })
-    
+    }) 
 }
 
-export const createEvent = (event) => (
-    $.ajax({
-        method: `POST`,
+export const fetchEvents = () => {
+    return $.ajax({
+        method: `GET`,
+        url: `/api/events/`
+    })
+}
+
+export const createEvent = (formData) => {
+    return $.ajax({
         url: '/api/events',
-        data: event,
-    })
-);
+        method: 'POST',
+        data: formData,
+        contentType: false,
+        processData: false
+    });
+};
 
-export const updateEvent = (event) => (
-    $.ajax({
-        method: `PATCH`,
-        url: `/api/events/${event.id}`,
-        data: event,
+export const updateEvent = (formData) => {
+    return $.ajax({
+        url: `/api/events/${formData.get("event[id]")}`,
+        method: 'PATCH',
+        data: formData,
+        contentType: false,
+        processData: false
     })
-);
+}
 
-export const deleteEvent = (id) => (
-    $.ajax({
+export const deleteEvent = (id) => {
+    return $.ajax({
         method: `DELETE`,
         url: `/api/events/${id}`
     })
+}

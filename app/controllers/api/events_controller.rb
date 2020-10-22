@@ -6,6 +6,7 @@ class Api::EventsController < ApplicationController
       render 'api/events/show'
     else
       render json @event.errors.full_messages, status: 422
+      # render json: {errors: "This event does not exist"}, status: 422
     end
 
   end
@@ -24,7 +25,7 @@ class Api::EventsController < ApplicationController
 
   def index
     @events = Event.all
-    render :index
+    # render :index
   end
 
   def show
@@ -33,15 +34,24 @@ class Api::EventsController < ApplicationController
   end  
 
   def destroy
+      @event = Event.find_by(id: params[:id])
+
+        if @event.destroy
+            render :show
+        else
+            render json: @event.errors.full_messages, status: 422
+        end
   end
 
   private
 
   def event_params
-    params.require(:event).permit(:title, :date, :time, :venue, :address, 
-      :latitude, :longitude, :price, :capacity, :at_capacity, :age_restriction,
-      :ticket_link, :img_url, :organizer_name)
+    params.require(:event).permit(:title, :venue, :date, :time, :address, 
+      :latitude, :longitude, :price, :capacity, :age_restriction,
+      :ticket_link)
   end
   
   
 end
+
+
