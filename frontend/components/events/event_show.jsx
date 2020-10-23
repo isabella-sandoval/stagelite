@@ -15,7 +15,11 @@ class EventShow extends React.Component{
 
     render(){
        
-        if (!this.props.event) return null;
+        if (!this.props.event) return (
+        <div className="event-show-container">
+                A very well polished event show page
+        </div>
+            )
         const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
         const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
         const { event } = this.props;
@@ -28,7 +32,7 @@ class EventShow extends React.Component{
             
                 
                 
-                {/* A very well polished event show page */}
+                A very well polished event show page
             </div>
         )
 
