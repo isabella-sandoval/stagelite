@@ -18,6 +18,7 @@
     "webpack": "^4.29.3",
     "webpack-cli": "3.3.12"
   },
+  
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "version": "1.0.0",
   "main": "index.js",

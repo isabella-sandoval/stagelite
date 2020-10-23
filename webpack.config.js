@@ -6,7 +6,7 @@ module.exports = {
         path: path.resolve(__dirname, 'app', 'assets', 'javascripts'), //put in root of tree
         filename: 'bundle.js'
     },
-    devtool: 'inline-source-map', //gives linen of code for errors
+    devtool: 'source-map', //gives linen of code for errors
     resolve: {
         extensions: [".js", ".jsx", "*"] //makes importing easier, adds extensions to files 
     },
