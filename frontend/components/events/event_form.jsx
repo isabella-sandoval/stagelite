@@ -89,3 +89,4 @@ render(){
 
 }
 
+export default EventForm;
