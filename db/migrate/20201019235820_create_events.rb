@@ -6,12 +6,12 @@ class CreateEvents < ActiveRecord::Migration[5.2]
       t.time :time, null:false
       t.string :venue, null:false
       t.string :address, null:false
-      t.float :latitude, null:false
-      t.float :longitude, null:false
+      t.float :latitude
+      t.float :longitude
       t.float :price, null:false
       t.integer :capacity, null:false
       t.integer :quantity, null:false
-      t.boolean :at_capacity, null:false
+      t.boolean :at_capacity, default:false
       t.boolean :age_restriction, null:false
       t.string :ticket_link, null:false
       t.string :img_url

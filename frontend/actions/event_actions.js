@@ -43,6 +43,7 @@ export const fetchEvents = (filters) => dispatch => {
             errors => dispatch(receiveErrors(errors.responseJSON)))
 };
 
+
 export const createEvent = (event) => dispatch => {
     return EventApiUtil.createEvent(event).then(event => 
         dispatch(receiveEvent(event)),

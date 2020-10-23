@@ -1,13 +1,17 @@
 class Event < ApplicationRecord
-    validates :title, :date, :time, :venue, :address, :latitude, :longitude,
-        :price, :capacity, :age_restriction, 
-        :ticket_link, :organizer_id, :genre_id, presence:true
+    validates :title, :date, :time, :venue, :address,
+        :price, :capacity,:ticket_link, :organizer_id, presence:true
+    validates :at_capacity, :age_restriction, inclusion:{in: [true, false] }
    
 
         belongs_to :organizer,
         primary_key: :id,
         foreign_key: :organizer_id,
         class_name: :User
+
+
+        belongs_to :genre
+
 
         has_one_attached :photo
 

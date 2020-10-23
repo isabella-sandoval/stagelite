@@ -1,10 +1,30 @@
 
 
+.all-events-container{
+    display:block;
+    padding-top: 23%;
+}
+
+
+
+.event-images ul{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.event-images ul div{
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-bottom: 20px;
+}
+
 .splash-body{
-    width: 87vw;
+    width: 80vw;
     height: 21vw;
-    margin-left: 7vw;
-    padding: 40px 0;
+    margin-left: 10vw;
+    
+    
     position: relative;
     
     background: image_url("splash.jpg");
@@ -35,3 +55,38 @@
     // flex-wrap: wrap;
     
 }
+
+
+
+
+.event-index-item{
+-webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.event-images img{
+    height: 10vw;
+    width: 16vw;
+    flex-wrap: wrap;
+    margin: 0;
+    border-radius: 2px 2px 0 0;
+    box-shadow: 0 0 10px lightgray;
+}
+
+
+.all-event-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 24px;
+    border-radius: 0 0 2px 2px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px lightgray;
+    width: 16vw;
+    height: 8vw;
+    margin: 0px;  
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+}
+

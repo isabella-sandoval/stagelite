@@ -30,16 +30,17 @@ class EventIndex extends React.Component {
                 </div>
                 
                 
-            
+            <div className="all-events-container">
           
                 
-                <div>
+                <div className="event-images">
                     <ul>
-                        {Object.values(events).map(event =>{debugger; return <EventIndexItem event={event} key={event.id} />})}
+                        {Object.values(events).map(event =>{ return <EventIndexItem event={event} key={event.id} />})}
                     </ul>
                 </div>
-            </div>
+                 </div>
   
+            </div>
         )
     }
 }
