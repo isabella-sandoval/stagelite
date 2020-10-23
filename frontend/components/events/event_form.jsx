@@ -53,6 +53,7 @@ class EventForm extends React.Component{
                     this.setState({ price: event.price});
                     this.setState({ genre: event.genre});
                     this.setState({ price: event.price});
+                    this.setState({ age_restriction: event.age_restriction});
 
             })
         }
@@ -147,17 +148,17 @@ render(){
                         <input
                             className="yes-radio"
                             value="true"
-                            name="this.state.age_restriction"
+                            name={this.update('age_restriction')}
                             type="radio"
-                            id="age"
+                           
                         />
                         No
                         <input
                             className="no-radio"
                             value="false"
-                            name="this.state.age_restriction"
+                            name={this.update('age_restriction')}
                             type="radio"
-                            id="age"
+                            
                         />
                 </div>
 

@@ -18,5 +18,5 @@ json.event do
         json.at_capacity
 
         json.img_url url_for(event.photo)
-    end
+
 end

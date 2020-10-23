@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 
 class EventIndexItem extends React.Component {
@@ -41,4 +41,4 @@ class EventIndexItem extends React.Component {
     }
 }
 
-export default EventIndexItem;
+export default withRouter(EventIndexItem);

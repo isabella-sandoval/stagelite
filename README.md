@@ -10,6 +10,7 @@
   * [Features](#features)
     * [User Auth](#user-auth)
     * [Events](#events)
+  * [Dynamic Nav-bar](#dynamic-nav-bar)
   
 ## Background
 
@@ -48,4 +49,8 @@ This site was built on a Ruby on Rails framework for the backend with active rec
 * Users can create, edit and manage their events.
 * Createres can search events by genre and once logged in the user can buy tickets to other users events.
 
+
+### Dynamic Nav-bar
+  * The nav bar changes depending on if a user a logged in or not.
+  * The nav-bar is located in a seperate component to keep the code clean and organized. 
 ---

@@ -3,7 +3,7 @@ import EventShow from './event_show';
 import { fetchEvent } from '../../actions/event_actions';
 
 const mSTP = (state, ownProps) => {
-    
+    debugger
     return {
         event: state.entities.events[ownProps.match.params.id],
         currentUser: state.session.id
