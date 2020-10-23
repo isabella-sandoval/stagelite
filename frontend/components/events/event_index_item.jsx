@@ -34,8 +34,6 @@ class EventIndexItem extends React.Component {
                         
                         </div>
                     </div>
-
-
                 </Link>
             </div>
         )
