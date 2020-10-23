@@ -17,6 +17,6 @@ json.event do
         json.ticket_link
         json.at_capacity
 
-        json.imageUrl url_for(event.photo)
+        json.img_url url_for(event.photo)
     end
 end
