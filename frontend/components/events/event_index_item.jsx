@@ -11,7 +11,7 @@ class EventIndexItem extends React.Component {
             <div className='event-index-item'>
                    
                 <Link to={`/event/${id}`}>
-                    <img className='event-image' src={img_url}/>
+                    {/* <img className='event-image' src={img_url}/> */}
                     <div className="all-event-info">
                         <div className="event-info">
                             <p className='title'>{title}</p>
