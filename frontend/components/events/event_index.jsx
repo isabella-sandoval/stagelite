@@ -12,7 +12,7 @@ class EventIndex extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchEvents(this.state);
+        this.props.fetchEvents();
     }
 
     render(){
@@ -35,10 +35,10 @@ class EventIndex extends React.Component {
                 
                 <div className="event-images">
                     <ul>
-                        {Object.values(events).map(event =>{ return <li>event</li>})}
+                            {Object.values(events).map(event => { return <EventIndexItem event={event} key={event.id} />})}
                     </ul>
                 </div>
-                 </div>
+            </div>
   
             </div>
         )
@@ -47,6 +47,4 @@ class EventIndex extends React.Component {
 
 export default EventIndex;
 
-{/* <div className="splash-page-img-container">
-                    <img className="splash-page-img" src={images.splash} ></img>
-                </div> */}
+
