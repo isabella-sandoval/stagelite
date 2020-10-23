@@ -12,7 +12,7 @@ const mSTP = (state) => ({
 
 
 const mDTP = dispatch => ({
-    fetchEvents: (filters) => dispatch(fetchEvents(filters)),
+    fetchEvents: () => dispatch(fetchEvents()),
 
 });
 
