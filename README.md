@@ -18,7 +18,6 @@ Stagelite is a full stack web application inspired by the website Eventbrite. Th
 This site was built on a Ruby on Rails framework for the backend with active record. PostgreSQL was used as the database to store the data along with Amazon AWS S3, which was used to store images for the events. React and Redux were utilized to create a dynamic, single-page web app allowing users to smoothly navigate through the site. 
 
 ## Technologies
-
 * Ruby on Rails
 * React.js
 * Redux.js
@@ -26,7 +25,6 @@ This site was built on a Ruby on Rails framework for the backend with active rec
 * PostgreSQL
 * Webpack
 * Amazon AWS S3
-
 * Google Maps Javascript API
 
 ## Features
