@@ -1,24 +1,53 @@
-# README
+# Stagelite
+###### [Live Site](https://stagelite.herokuapp.com/#/)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![screenshot](/app/assets/images/stagelite-screenshot.png)
 
-Things you may want to cover:
+## Table of Contents
 
-* Ruby version
+  * [Background](#background)
+  * [Technologies](#technologies)
+  * [Features](#features)
+    * [User Auth](#user-auth)
+    * [Events](#events)
+  
+## Background
 
-* System dependencies
+Stagelite is a full stack web application inspired by the website Eventbrite. The website allows users to create an account and sign in. When logged in the users can create, edit and buy tickets to events. If a user does not want to sign up for an account, they can use the demo login or still explore the events index and events show pages. 
 
-* Configuration
+This site was built on a Ruby on Rails framework for the backend with active record. PostgreSQL was used as the database to store the data along with Amazon AWS S3, which was used to store images for the events. React and Redux were utilized to create a dynamic, single-page web app allowing users to smoothly navigate through the site. 
 
-* Database creation
+## Technologies
 
-* Database initialization
+* Ruby on Rails
+* React.js
+* Redux.js
+* Node.js
+* PostgreSQL
+* Webpack
+* Amazon AWS S3
 
-* How to run the test suite
+* Google Maps Javascript API
 
-* Services (job queues, cache servers, search engines, etc.)
+## Features
+* Create events
+* Edit events
+* Manage events created
+* Browse events by genre
+* Get tickets for an event
 
-* Deployment instructions
+### User Auth 
 
-* ...
+
+* Users can sign up and sign in on stagelite, and login to view their events.
+* Users who do not want to create an account are able to login as a demo user to navigate throughout the website and use it's features
+* Once logged in the nav bar changes and the user is redirected to the profile page.
+
+
+### Events
+
+
+* Users can create, edit and manage their events.
+* Createres can search events by genre and once logged in the user can buy tickets to other users events.
+
+---
