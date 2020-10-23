@@ -21,7 +21,9 @@ class EventShow extends React.Component{
             <div className="event-show-container">
                 {/* <img className='event-image' src={this.props.event.img_url} /> */}
                 
-                TESTING
+                A very well polished event show page
+
+                
             </div>
         )
         }

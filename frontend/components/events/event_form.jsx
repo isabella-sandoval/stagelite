@@ -141,6 +141,7 @@ render(){
                     onChange={this.update('ticket_link')} />
 
                 <div><h1>Is this event 21+?</h1>
+            </div>
                 <div className="radio-buttons">
                         Yes
                         <input
@@ -148,6 +149,7 @@ render(){
                             value="true"
                             name="this.state.age_restriction"
                             type="radio"
+                            id="age"
                         />
                         No
                         <input
@@ -155,9 +157,9 @@ render(){
                             value="false"
                             name="this.state.age_restriction"
                             type="radio"
+                            id="age"
                         />
                 </div>
-            </div>
 
             
             <div className='event-error-messages'>{this.renderErrors()}</div>
