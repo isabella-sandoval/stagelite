@@ -18,7 +18,6 @@ class EventIndex extends React.Component {
     render(){
         const { events } = this.props;
 
-        let arr = ["2","3","4","5"]
         return(
             <div className="splash-body">
                 <div className="splash-text">
@@ -35,7 +34,7 @@ class EventIndex extends React.Component {
                 
                 <div className="event-images">
                     <ul>
-                        {arr.map(event => { return <li key={event} />})}
+                        {Object.values(events).map(event => { return <EventIndexItem event={event} key={event.id} />})}
                     </ul>
                 </div>
             </div>
