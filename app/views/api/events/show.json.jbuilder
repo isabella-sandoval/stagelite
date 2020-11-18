@@ -1,5 +1,5 @@
 @event.id do
-       json.extract! @event, :title, :venue, :address, :capacity, :price, :age_restriction, :ticket_link, :genre_id,
+       json.extract! @event, :title, :venue, :address, :capacity, :price, :age_restriction, :ticket_link, :genre_id, :organizer_id
 
         json.date do
             json.month @event.date.month

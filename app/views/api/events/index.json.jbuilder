@@ -1,6 +1,6 @@
 @events.each do |event|
     json.set! event.id do
-       json.extract! event, :id, :title, :venue, :address, :price, :age_restriction
+       json.extract! event, :id, :title, :venue, :address, :price, :age_restriction, :organizer_id
 
         json.date do
             json.date event.date
