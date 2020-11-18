@@ -27,7 +27,7 @@ const App = () => (
                 
                 <Route exact path="/events/" component = { EventIndexContainer } />
                 
-                <Route exact path='/events/:eventId' component={EventShowContainer} />
+                <Route exact path='/event/:eventId' component={EventShowContainer} />
                 <Route exact path='/error' component={Error}/>
                 <Redirect to="/error" />
 

@@ -5,15 +5,15 @@ import { fetchEvent } from '../../actions/event_actions';
 const mSTP = (state, ownProps) => {
     // debugger
     return {
-        event: state.entities.events[ownProps.match.params.id],
+        event: state.entities.events[ownProps.match.params.eventId],
         currentUser: state.session.id
     }
 };
 
 const mDTP = dispatch => {
-    return ({
+    return {
         fetchEvent: (id) => dispatch(fetchEvent(id))
-    });
+    };
 };
 
 

@@ -13,7 +13,7 @@ const eventsReducer = (oldState = {}, action) => {
 
         case RECEIVE_EVENT:
             nextState[action.event.id] = action.event
-            
+            return nextState;
 
         case REMOVE_EVENT:
             delete nextState[action.id]

@@ -3,7 +3,6 @@ json.event do
         json.title
         json.date
         json.time
-        json.title
         json.venue
         json.address
         json.latitude

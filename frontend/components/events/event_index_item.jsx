@@ -11,7 +11,7 @@ class EventIndexItem extends React.Component {
         return (
             <div className='event-index-item'>
                    
-                <Link className="event-ind-link" to={`/events/${id}`}>
+                <Link className="event-ind-link" to={`/event/${id}`}>
                     
                         <img className='event-image' src={img_url}/>
                         <div className="all-event-info">
@@ -23,16 +23,10 @@ class EventIndexItem extends React.Component {
 
                             <div className='event-date-time'>
                                 <p>{days[date.day % 7]}, {months[date.month - 1]} {date.day}, {date.year}</p>
-                        
-
-                                {/* <p>{time.hour}</p>
-                                <p>{time.minute}</p> */}
+                    
                             </div>
 
-                            <div className='location'>
-                                <p>{venue}</p>
-                                <p>{address}</p>
-                            </div>
+                   
                     
                     </div>
                 </Link>
