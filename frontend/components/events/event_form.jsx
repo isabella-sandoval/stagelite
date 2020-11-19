@@ -16,7 +16,7 @@ class EventForm extends React.Component{
             age_restriction: '',
             ticket_link: '',
             quantity: '',
-            photo: null,
+            photo: '',
             
         }  
         
@@ -38,6 +38,10 @@ class EventForm extends React.Component{
         e.preventDefault();
         const event = Object.assign({}, this.state);
         this.props.processForm(event)
+
+        if (this.state.photoFile) {
+            formData.append('event[photo]', this.state.photoFile);
+        }
     }
 
 
@@ -70,6 +74,7 @@ class EventForm extends React.Component{
 
 
 render(){
+    const preview = this.state.imageUrl ? <img className="preview" src={this.state.imageUrl} /> : null;
     return(
     <div>
         <form className="event-form">
@@ -161,6 +166,26 @@ render(){
                             
                         />
                 </div>
+
+                    <div className="img-input-container">
+                <h1 className="event-image-input">Event Image
+
+                        {preview ?
+                            (<div className="border-container">
+                                <input
+                                    type="file"
+                                    onChange={this.handleFile}></input>
+                                {preview}
+                            </div>)
+                            : (<div className="border-container">
+                            
+                                <input
+                                    type="file"
+                                    onChange={this.handleFile}></input>
+                            </div>)}
+
+                </h1>
+                    </div>
 
             
             <div className='event-error-messages'>{this.renderErrors()}</div>
