@@ -59,7 +59,7 @@ class SessionForm extends React.Component{
                    <p className="s-logo">S</p>
                     <h2 className="form-header">Please {this.props.formType} or {this.props.navLink}</h2>
                                 
-                                <input type="text"
+                                <input type="email"
                                 value={this.state.email}
                                 onChange={this.update('email')}
                                 className="email-input"

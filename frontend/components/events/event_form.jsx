@@ -1,4 +1,5 @@
 import React from 'react';
+import eventsReducer from '../../reducers/events_reducer';
 
 
 class EventForm extends React.Component{
@@ -168,23 +169,27 @@ render(){
                 </div>
 
                     <div className="img-input-container">
-                <h1 className="event-image-input">Event Image
+                
 
                         {preview ?
                             (<div className="border-container">
+                                <h1>Event Image
                                 <input
                                     type="file"
                                     onChange={this.handleFile}></input>
                                 {preview}
+                                </h1>
                             </div>)
                             : (<div className="border-container">
-                            
+                                <h1>Event Image
                                 <input
                                     type="file"
                                     onChange={this.handleFile}></input>
+
+                                </h1>    
                             </div>)}
 
-                </h1>
+                
                     </div>
 
             
@@ -200,3 +205,21 @@ render(){
 }
 
 export default EventForm;
+
+
+// add Dynos 
+
+
+// adjust words and date in box
+
+// dropdown to show who you
+
+// edit and delete events
+
+// pop up when added to event
+
+//search bar
+
+//about links for both projects
+
+

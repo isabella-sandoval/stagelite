@@ -12,7 +12,23 @@ const Navigation = ({ currentUser, logout }) => {
                 </div>
 
                 <div className="nav-buttons">
-                    <div className="help-dropdown">Help</div>
+                    <div>
+                        <a
+                            className="job"
+                            target="_blank"
+                            href="https://github.com/isabella-sandoval/stagelite">
+                            <i className="fab fa-github fa-2x"></i>
+                        </a>
+                    </div>
+
+                    <div>
+                        <a
+                            className="job"
+                            target="_blank"
+                            href="https://www.linkedin.com/in/isabella-sandoval-513025192/">
+                            <i class="fab fa-linkedin-in fa-2x"></i>
+                        </a>
+                    </div>
                     <Link className="create-event" to="/event/new">Create Event</Link>
                     <button className="sign-out-button" onClick={logout}>Log out</button>
                 </div>

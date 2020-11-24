@@ -17,6 +17,8 @@ class EventShow extends React.Component{
         const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
         const { event } = this.props;
         
+        if(!this.props.event) return null;
+        
        return(
             <div className="show-container">
                 <div className="event-show-container">
