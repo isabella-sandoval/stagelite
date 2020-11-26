@@ -25,10 +25,6 @@ class EventShow extends React.Component{
                     <img className='event-image' src={event.img_url} />
                 </div>
 
-               <div className="background-img-container">
-                   <img className='background-img' src={event.img_url} />
-               </div>
-
                 <div className="event-show-deets">
                     <p>{event.title}</p>
                     <p>by organizer:{event.organizer_id}</p>
@@ -44,6 +40,10 @@ class EventShow extends React.Component{
                         }
                     </div>
                </div>
+               <div className="background-img-container">
+                   <img className='background-img' src={event.img_url} />
+               </div>
+
            </div>
         )
 

@@ -20,7 +20,7 @@
 .event-images ul div{
     padding-right: 30px;
     padding-left: 30px;
-    padding-bottom: 20px;
+    padding-bottom: 2vw;
 
 }
 
@@ -96,14 +96,14 @@
     flex-direction: column;
     // justify-content: space-between;
     box-sizing: border-box;
-    padding: 15px;
+    padding-top: .75vw;
     border-radius: 0 0 0.1vw 0.1vw;
     background-color: #ffffff;
     box-shadow: 0 0 10px lightgray;
     width: 16vw;
     height: 8vw;
     margin: 0px;  
-    font-size: .7vw;
+    font-size: 2em;
     line-height: 22px;
     font-weight: 400;
 }
@@ -113,8 +113,9 @@
     flex-direction:column;
     color: #d1410c;
     font-weight: 600;
-    -webkit-box-align: baseline;
+    padding-bottom: .2em;
     align-items: flex-start;
+    font-size: .7vw;
 }
 
 .event-info{
@@ -122,9 +123,10 @@
     font-weight: 700;
     color: #39364f;
     font-size: 1.22vw;
-    line-height: 1.75rem;
+    line-height: 1.5vw;
     letter-spacing: .20px;
     align-items: flex-start;
     flex-direction: row;
     padding-bottom: 0;
+    
 }
