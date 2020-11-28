@@ -32,19 +32,29 @@ class EventShow extends React.Component{
                            <p className='day'>{event.date.day}</p>
                             {/* <p>{days[event.date.day % 7]} {months[event.date.month - 1]} {event.date.day}, {event.date.year}</p> */}
                         </div>
-                        <p>{event.title}</p>
-                        <p>by organizer:{event.organizer_id}</p>
-                        <p>${event.price}</p>
+                   
+                        <p className='event-title'>{event.title}</p>
+                        <p className="organizer">organizer:{event.organizer_id}</p>
+    
+                    </div>
+                </div>
+                        <div className='price-age'>
+                            <p>${event.price}</p>
                         <p>{event.age_restriction ? <div>21+</div> : <div>All Ages</div>}</p>
                             {event.time.min < 10 ?
                             <div className="date">{event.time.hour}:0{event.time.min} PM</div> :
                             <div className="date">{event.time.hour}:{event.time.min} PM</div>
                             }
-                    </div>
-                </div>
-                    <div className="background-img-container">
-                        <img className='background-img' src={event.img_url} />
-                    </div>
+                        <button className='tickets'>Tickets
+                                 
+                        </button>
+                        </div>
+
+                        <div className="background-img-container">
+                            <img className='background-img' src={event.img_url} />
+                        </div>
+
+                        
            </div>
         )
 

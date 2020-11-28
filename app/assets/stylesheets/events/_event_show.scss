@@ -1,11 +1,14 @@
+.body{
+   background-color: whitesmoke;
+}
 .event-show-container{
    font-size: 35px;
    // padding: 80px;  
    display: flex;   
    justify-content: center; 
    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
+   margin-left: auto;
+   margin-right: auto;
     
 
 }
@@ -24,7 +27,8 @@
    width: 100%;
    z-index: -1;
    max-height: inherit;
-   height: 730px;
+   // height: 730px;
+   height: 67%;
    overflow: hidden;
 }
 
@@ -43,7 +47,9 @@
    display:flex;
    justify-content: flex-start;
    margin: 0px;
-    padding-top: 30px;
+   //  padding-top: 30px;
+    padding-top: 50px;
+
     display: block;
 }
 
@@ -55,7 +61,7 @@
 .event-show-deets{
    // display: flex;
    //      flex-direction: column;
-   background-color: whitesmoke;
+   background-color: white;
    width: 40%;
    border-radius: 0 5px 0 0;
    padding: 30px;
@@ -79,4 +85,59 @@
    font-size: 30px;
    color: #666a73;
    line-height: 1.25em;
+}
+
+.event-title{
+   color: #282C35;
+   font-weight: 600;
+   font-size: 30px;
+   padding-top: 30px;
+}
+
+
+.organizer{
+   color: gray;
+   font-weight: 400;
+   font-size: 18px;
+   padding-top: 15px;
+   text-transform: uppercase;
+}
+
+.price-age{
+   width: 60%;
+   display: flex;   
+   justify-content: center; 
+   background-color: white;
+   margin-left: auto;
+    margin-right: auto;
+    height: 9vh;
+    border-top: solid;
+    border-bottom: solid;
+    border-color: lightgrey;
+    border-width: thin;
+    border-radius: 0 0 5px 5px;
+}
+
+
+.tickets{
+   background-color: green;
+   border-radius: 5px;
+   width: 100%;
+   max-width: 320px;
+   float: none;
+   margin-right: 25px;
+   margin-left: 25px;
+   margin-top: 10px;
+   margin-bottom: 10px;
+   color: white;
+   font-size: 20px;
+   letter-spacing: 1px;
+}
+
+.tickets:hover{
+   background-color: #469d57;
+}
+
+.date{
+   width:100%;
 }
