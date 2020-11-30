@@ -1,10 +1,20 @@
 import React from 'react';
+import Popup from './popup';
 
 
 class EventShow extends React.Component{
     constructor(props){
         super(props)
        
+        
+        this.state = { showPopup: false };
+        this.togglePopup = this.togglePopup.bind(this);
+    }
+
+    togglePopup() {
+        this.setState({
+            showPopup: !this.state.showPopup
+        });
     }
 
     componentDidMount(){
@@ -45,9 +55,15 @@ class EventShow extends React.Component{
                             <div className="date">{event.time.hour}:0{event.time.min} PM</div> :
                             <div className="date">{event.time.hour}:{event.time.min} PM</div>
                             }
-                        <button className='tickets'>Tickets
-                                 
-                        </button>
+                   <button className='tickets' onClick={this.togglePopup.bind(this)}>RSVP</button>
+
+                   {this.state.showPopup ?
+                       <Popup
+                           text='Click "Close Button" to hide popup'
+                           closePopup={this.togglePopup.bind(this)}
+                       />
+                       : null
+                   }
                         </div>
 
                         <div className="background-img-container">
