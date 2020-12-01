@@ -44,6 +44,7 @@ class EventShow extends React.Component{
                         </div>
                    
                         <p className='event-title'>{event.title}</p>
+                        <p className='event-genre'>{event.genre_id}</p>
                         <p className="organizer">organizer:{event.organizer_id}</p>
     
                     </div>
@@ -63,7 +64,8 @@ class EventShow extends React.Component{
 
                    {this.state.showPopup ?
                        <Popup
-                           text= 'You are RSVP for this event'
+                           key={event.id}
+                           event= {event}
                            closePopup={this.togglePopup.bind(this)}
                        />
                        : null

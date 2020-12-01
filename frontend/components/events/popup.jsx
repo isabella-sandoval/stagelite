@@ -1,12 +1,13 @@
 import React from 'react';
 
+const months = ['January', 'Febuary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 class Popup extends React.Component {
     render() {
         return (
             <div className='popup'>
                 <div className='popup_inner'>
-                    <h1>{this.props.text}</h1>
-                    <button onClick={this.props.closePopup}>close me</button>
+                    <h1>You are registered for {this.props.event.title} on {months[this.props.event.date.month - 1]} {this.props.event.date.day}!</h1>
+                    <button onClick={this.props.closePopup}>got it!</button>
                 </div>
             </div>
         );
@@ -14,3 +15,4 @@ class Popup extends React.Component {
 }
 
 export default Popup;
+
