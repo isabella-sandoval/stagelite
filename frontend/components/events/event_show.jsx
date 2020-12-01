@@ -48,18 +48,22 @@ class EventShow extends React.Component{
     
                     </div>
                 </div>
+                        <div className='extrainfo'> 
                         <div className='price-age'>
-                            <p>${event.price}</p>
-                        <p>{event.age_restriction ? <div>21+</div> : <div>All Ages</div>}</p>
+                        <p className="price">${event.price}</p>
+                            
+                       <p className="age">{event.age_restriction ? <div>21+</div> : <div>All Ages</div>}</p>
+                            
                             {event.time.min < 10 ?
                             <div className="date">{event.time.hour}:0{event.time.min} PM</div> :
                             <div className="date">{event.time.hour}:{event.time.min} PM</div>
                             }
                    <button className='tickets' onClick={this.togglePopup.bind(this)}>RSVP</button>
+                    </div>
 
                    {this.state.showPopup ?
                        <Popup
-                           text='Click "Close Button" to hide popup'
+                           text= 'You are RSVP for this event'
                            closePopup={this.togglePopup.bind(this)}
                        />
                        : null

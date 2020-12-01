@@ -65,11 +65,11 @@ const Navigation = ({ currentUser, logout }) => {
                             <i class="fab fa-linkedin-in fa-2x"></i>
                         </a>
                     </div>
-                    
+
                     <div a="/login" className="help-dropdown">Help</div>
                     {/* <div className="create-event">Create Event</div> */}
 
-                    <Link className="create-event" to="/login">Create Event</Link>
+                    <Link className="create-event-loggedout" to="/login">Create Event</Link>
                     <Link className="sign-in-link" to="/login">Sign In</Link>
                 </div>
 

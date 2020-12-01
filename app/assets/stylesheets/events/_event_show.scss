@@ -105,7 +105,8 @@
 .price-age{
    width: 60%;
    display: flex;   
-   justify-content: center; 
+   // justify-content: center; 
+
    background-color: white;
    margin-left: auto;
     margin-right: auto;
@@ -115,6 +116,7 @@
     border-color: lightgrey;
     border-width: thin;
     border-radius: 0 0 5px 5px;
+   //  align-items:baseline;
 }
 
 
@@ -153,13 +155,45 @@
   margin: auto;
   background-color: rgba(0,0,0, 0.5);
 }
-.popup_inner {
+.popup_inner{
   position: absolute;
-  left: 25%;
-  right: 25%;
-  top: 25%;
-  bottom: 25%;
+  left: 30%;
+  right: 30%;
+  top: 30%;
+  bottom: 30%;
   margin: auto;
   border-radius: 20px;
-  background: white;
+  background: whitesmoke;
+}
+
+
+.popup_inner{
+   display:flex;
+   flex-direction:column;
+   
+}
+.popup_inner h1{
+   display:flex;
+   justify-content: center;
+   margin-top: 30%;
+}
+
+.popup_inner button{
+   display:flex;
+   justify-content: center;
+   width: 20%;
+   margin-left: 40%;
+}
+
+
+.price-age div, .price-age p{
+   border-top: 20%;
+}
+
+.date, .price, .age{
+   font-family: Neue Plak,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;
+   margin: 3%;
+   font-size: 1.2rem;
+   line-height: 1.5rem;
+   color: gray;
 }
