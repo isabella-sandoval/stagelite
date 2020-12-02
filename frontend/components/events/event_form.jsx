@@ -142,10 +142,10 @@ render(){
                 onChange={this.update('price')} />
 
 
-            <input type="text"
+            {/* <input type="text"
                     value={this.state.ticket_link}
                     placeholder="ticket_link"
-                    onChange={this.update('ticket_link')} />
+                    onChange={this.update('ticket_link')} /> */}
 
                 <div><h1>Is this event 21+?</h1>
             </div>

@@ -64,7 +64,7 @@
    background-color: white;
    width: 40%;
    border-radius: 0 5px 0 0;
-   padding: 30px;
+   padding: 28px;
 }
 
 .event-date{
@@ -97,10 +97,26 @@
 .organizer{
    color: gray;
    font-weight: 400;
-   font-size: 18px;
+   font-size: 16px;
    padding-top: 15px;
    text-transform: uppercase;
 }
+
+.venue-name{
+   color: #282C35;
+   font-weight: 480;
+   font-size: 22px;
+   padding-top: 50px;
+}
+
+.address{
+   padding-top: 8px;
+   color: #282C35;
+    line-height: 1.4rem;
+    font-size: 15px;
+    font-weight: 400;
+}
+
 
 .price-age{
    width: 60%;
@@ -176,9 +192,11 @@
 .popup_inner h1{
    display:flex;
    justify-content: center;
+   margin: 10%;
    margin-top: 20%;
    font-family: Neue Plak,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;
    font-weight: 400;
+   font-size: 20px;
 }
 
 .popup_inner button{
