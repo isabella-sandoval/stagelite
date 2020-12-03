@@ -1,5 +1,7 @@
 import React from 'react';
 import { Redirect } from 'react-router';
+import SearchBar from './search_bar';
+// import search_bar_container from './search_bar_container';
 import EventIndexItem from './event_index_item';
 
 
@@ -28,8 +30,8 @@ class EventIndex extends React.Component {
                     <p>post COVID utopian!</p>
                 </div>
                 
-                
             <div className="all-events-container">
+            {/* <SearchBar />   */}
           
                 
                 <div className="event-images">

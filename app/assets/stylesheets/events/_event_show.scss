@@ -103,15 +103,15 @@
 }
 
 .venue-name{
-   color: #282C35;
-   font-weight: 480;
+   color: #2a2a2a;
+   font-weight: 450;
    font-size: 22px;
    padding-top: 50px;
 }
 
 .address{
    padding-top: 8px;
-   color: #282C35;
+   color: #2a2a2a;
     line-height: 1.4rem;
     font-size: 15px;
     font-weight: 400;
@@ -187,13 +187,14 @@
 .popup_inner{
    display:flex;
    flex-direction:column;
+   justify-content: center;
    
 }
 .popup_inner h1{
    display:flex;
    justify-content: center;
-   margin: 10%;
-   margin-top: 20%;
+   margin: 7%;
+   
    font-family: Neue Plak,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;
    font-weight: 400;
    font-size: 20px;
@@ -204,6 +205,7 @@
    width: 20%;
    margin-left: 40%;
    height: 44px;
+   border-radius: 5px;
    
    font-size: 16px;
    font-weight: 600;
@@ -213,6 +215,10 @@
     padding-bottom: 8px;
     border-color: gray;
     
+}
+
+.popup_inner button:hover{
+   font-size: 18px; 
 }
 
 
@@ -226,4 +232,18 @@
    font-size: 1.2rem;
    line-height: 1.5rem;
    color: gray;
+}
+
+.age > *{
+   width: max-content
+}
+
+.s-logo-popup{
+   display: flex;
+   font-family: 'Warnes', cursive;
+    font-size: 38px;
+    color: #f05637;
+    font-weight: 500;
+    padding-top: 8%;
+    justify-content: center;
 }

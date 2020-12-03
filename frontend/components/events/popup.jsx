@@ -6,6 +6,7 @@ class Popup extends React.Component {
         return (
             <div className='popup'>
                 <div className='popup_inner'>
+                    <p className="s-logo-popup">S</p>
                     <h1>You are now registered for {this.props.event.title} on {months[this.props.event.date.month - 1]} {this.props.event.date.day}!</h1>
                     <button onClick={this.props.closePopup}>Got it!</button>
                 </div>

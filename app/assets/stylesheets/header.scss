@@ -20,6 +20,10 @@
     text-decoration: none;
 }
 
+.help-dropdown-loggedin{
+    padding-top: 5.2px;
+}
+
 .sign-in-link{
     text-decoration: none
 
@@ -111,3 +115,25 @@
    padding-right: 3px;
 
 }
+
+// .help-dropdown-loggedin {
+//     position: relative;
+//     width: 450px;
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: space-around;
+//     color: #666a73;
+//     font-size: 14.5px;
+//     letter-spacing: -.1px;
+
+//     .nav-link {
+//       text-decoration: none;
+//       color: inherit;
+//       display: flex;
+//       align-items: center;
+//       color: #39364F;
+//       font-size: 15px;
+//     }
+    
+    
+//   }

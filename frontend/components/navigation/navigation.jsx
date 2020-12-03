@@ -29,6 +29,12 @@ const Navigation = ({ currentUser, logout }) => {
                             <i class="fab fa-linkedin-in fa-2x"></i>
                         </a>
                     </div>
+                    <div className="help-dropdown-loggedin">Help</div>
+                    {/* <ul className="help-dropdown-loggedin">Profile
+                        <li className='nav-link'>Help</li>
+                        <li className='nav-link'>My Events</li>
+                    </ul> */}
+
                     <Link className="create-event" to="/event/new">Create Event</Link>
                     <button className="sign-out-button" onClick={logout}>Log out</button>
                 </div>
@@ -66,8 +72,8 @@ const Navigation = ({ currentUser, logout }) => {
                         </a>
                     </div>
 
-                    <div a="/login" className="help-dropdown">Help</div>
-                    {/* <div className="create-event">Create Event</div> */}
+                    <div className="help-dropdown">Help</div>
+                    
 
                     <Link className="create-event-loggedout" to="/login">Create Event</Link>
                     <Link className="sign-in-link" to="/login">Sign In</Link>

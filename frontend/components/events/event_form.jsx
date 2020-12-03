@@ -1,6 +1,6 @@
 import React from 'react';
 import eventsReducer from '../../reducers/events_reducer';
-
+import { Redirect } from 'react-router';
 
 class EventForm extends React.Component{
     constructor(props){
@@ -24,7 +24,7 @@ class EventForm extends React.Component{
 
         this.update = this.update.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-
+        this.handleFile = this.handleFile.bind(this);
         
     }
 
@@ -37,11 +37,11 @@ class EventForm extends React.Component{
 
     handleSubmit(e) {
         e.preventDefault();
-        const event = Object.assign({}, this.state);
-        this.props.processForm(event)
+        const UserEvent = Object.assign({}, this.state);
+        this.props.processForm(UserEvent)
 
         if (this.state.photoFile) {
-            formData.append('event[photo]', this.state.photoFile);
+            formData.append('UserEvent[photo]', this.state.photo);
         }
     }
 
@@ -64,7 +64,17 @@ class EventForm extends React.Component{
         }
     }
 
+    handleFile(e) {
+        e.preventDefault();
+        const file = e.currentTarget.files[0];
+        const fileReader = new FileReader();
+        fileReader.onloadend = () => {
+            this.setState({ photoFile: file, imageUrl: fileReader.result });
+        };
 
+       
+
+    }
 
     renderErrors() {
        
@@ -88,10 +98,6 @@ render(){
                     placeholder="title"
                     onChange={this.update('title')}/>
 
-                {/* <input type="text"
-                    value={this.state.genre}
-                    placeholder="genre"
-                    onChange={this.update('genre')}/> */}
 
 
             <div className="location-text">
@@ -149,12 +155,12 @@ render(){
 
                 <div><h1>Is this event 21+?</h1>
             </div>
-                <div className="radio-buttons">
+                <div className="radio-button">
                         Yes
                         <input
                             className="yes-radio"
                             value="true"
-                            name={this.update('age_restriction')}
+                            onChange={this.update('age_restriction')}
                             type="radio"
                            
                         />
@@ -162,7 +168,7 @@ render(){
                         <input
                             className="no-radio"
                             value="false"
-                            name={this.update('age_restriction')}
+                            onChange={this.update('age_restriction')}
                             type="radio"
                             
                         />
@@ -192,9 +198,8 @@ render(){
                 
                     </div>
 
-            
-            <div className='event-error-messages'>{this.renderErrors()}</div>
-            <input className="event-submit" type="submit" value='Submit' />
+            <div className='event-error-messages'>{this.props.errors ? this.props.errors.join(', ') : null}</div>
+                <input className="event-submit" type="submit" value='Submit' onClick={this.handleSubmit}/>
 
         </form>
     </div>

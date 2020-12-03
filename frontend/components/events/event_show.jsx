@@ -12,11 +12,15 @@ class EventShow extends React.Component{
     }
 
     togglePopup() {
+        if (this.props.currentUser){
         this.setState({
             showPopup: !this.state.showPopup
-        });
+        })} else{
+            this.props.history.push("/login")
+        }
     }
 
+    
     componentDidMount(){
         const eventId = this.props.match.params.eventId;
         this.props.fetchEvent(eventId);
@@ -59,8 +63,8 @@ class EventShow extends React.Component{
                        <p className="age">{event.age_restriction ? <div>21+</div> : <div>All Ages</div>}</p>
                             
                             {event.time.min < 10 ?
-                            <div className="date">{event.time.hour}:0{event.time.min} PM</div> :
-                            <div className="date">{event.time.hour}:{event.time.min} PM</div>
+                            <div className="date">{event.time.hour}:0{event.time.min} </div> :
+                            <div className="date">{event.time.hour}:{event.time.min} </div>
                             }
                    <button className='tickets' onClick={this.togglePopup.bind(this)}>RSVP</button>
                     </div>

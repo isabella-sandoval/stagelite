@@ -5,7 +5,7 @@ import EventForm from './event_form';
 
 const mSTP = (state) => ({
     formType: 'create',
-    errors: state.errors.event
+    errors: state.errors.events
 });
 
 

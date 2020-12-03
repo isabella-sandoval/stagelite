@@ -24,6 +24,7 @@ const App = () => (
                 <AuthRoute exact path='/login' component={LoginFormContainer} />
                 <AuthRoute exact path='/signup' component={SignupFormContainer} />
                 <ProtectedRoute exact path='/event/new' component={CreateEventContainer} formType='new' />
+                {/* <ProtectedRoute exact path='/event/new' component={CreateEventContainer} formType='new' /> */}
                 
                 <Route exact path="/events/" component = { EventIndexContainer } />
                 
