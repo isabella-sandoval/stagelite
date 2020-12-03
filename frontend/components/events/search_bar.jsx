@@ -34,7 +34,7 @@ class SearchBar extends React.Component {
         return (
             <div className="search-bar-container">
                 <form onSubmit={this.submitSearch}>
-                    <i class="fas fa-search"></i>
+                    {/* <i class="fas fa-search"></i> */}
                     <input className="search-bar" placeholder="Search events" onChange={this.updateSearch} value={this.state.search} />
                     
                 </form>
