@@ -31,7 +31,7 @@ class EventIndex extends React.Component {
                 </div>
                 
             <div className="all-events-container">
-            {/* <SearchBar />   */}
+            <SearchBar />  
           
                 
                 <div className="event-images">

@@ -8,7 +8,7 @@ class SearchBar extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchEvents();
+        // this.props.fetchEvents();
     }
 
     updateSearch(e) {
@@ -33,10 +33,10 @@ class SearchBar extends React.Component {
 
         return (
             <div className="search-bar-container">
-                <i className="far fa-search"></i>
                 <form onSubmit={this.submitSearch}>
-                    <input className="search-bar" placeholder="search for events" onChange={this.updateSearch} value={this.state.search} />
-                    <button></button>
+                    <i class="fas fa-search"></i>
+                    <input className="search-bar" placeholder="Search events" onChange={this.updateSearch} value={this.state.search} />
+                    
                 </form>
             </div>
       
