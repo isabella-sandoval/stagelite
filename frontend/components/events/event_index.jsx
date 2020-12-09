@@ -1,6 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router';
-import SearchBar from './search_bar';
+import SearchBar from '../search/search';
 // import search_bar_container from './search_bar_container';
 import EventIndexItem from './event_index_item';
 
@@ -31,14 +31,14 @@ class EventIndex extends React.Component {
                 </div>
                 
             <div className="all-events-container">
-            <SearchBar />  
+            <SearchBar events={events}/>  
           
                 
-                <div className="event-images">
+                {/* <div className="event-images">
                     <ul>
                         {Object.values(events).map(event => { return <EventIndexItem event={event} key={event.id} />})}
                     </ul>
-                </div>
+                </div> */}
             </div>
   
             </div>
