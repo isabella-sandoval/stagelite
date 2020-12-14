@@ -1,6 +1,6 @@
-class Genre < ApplicationRecord
-    validates :title, presence:true
+# class Genre < ApplicationRecord
+#     validates :title, presence:true
 
-    has_many :events
+#     has_many :events
     
-end
+# end

@@ -29,7 +29,6 @@ class EventForm extends React.Component{
     }
 
     update(field) {
-        
         return e => {
             this.setState({ [field]: e.currentTarget.value })
         }
@@ -38,20 +37,44 @@ class EventForm extends React.Component{
     handleSubmit(e) {
         e.preventDefault();
         const UserEvent = Object.assign({}, this.state);
-        this.props.processForm(UserEvent)
+        const formData = new FormData();
+
+
+        formData.append('event[title]', this.state.title);
+        formData.append('event[venue]', this.state.venue);
+        formData.append('event[date]', this.state.date);
+        formData.append('event[time]', this.state.time);
+        formData.append('event[address]', this.state.address);
+        formData.append('event[age_restriction]', this.state.age_restriction);
+
+        formData.append('event[organizer_id]', this.props.currentUser);
+
+        this.props.processForm(formData)
 
         if (this.state.photoFile) {
-            formData.append('UserEvent[photo]', this.state.photo);
+            formData.append('event[photo]', this.state.photo);
         }
+
+        if (this.props.formType === 'edit') {
+            formData.append('event[id]', this.state.id);
+        }
+
+
+        this.props.processForm(formData).then(
+            railsitem => {
+                this.props.history.push(`/event/${railsitem.event.id}`);
+            }
+        );
     }
 
 
 
     componentDidMount() {
         if (this.props.formType === 'edit') {
-            this.props.fetchEvent(this.props.eventId).then(() => {
+            this.props.fetchEvent(this.props.id).then(() => {
                 const { event } = this.props;
-                    this.setState(event);
+                    // this.setState(event);
+                    this.setState({ id: event.id });
                     this.setState({ title: event.title });
                     this.setState({ time: event.time});
                     this.setState({ date: event.date });
@@ -71,17 +94,8 @@ class EventForm extends React.Component{
         fileReader.onloadend = () => {
             this.setState({ photoFile: file, imageUrl: fileReader.result });
         };
-
-       
-
-    }
-
-    renderErrors() {
        
     }
-
-
-
 
 
 render(){
