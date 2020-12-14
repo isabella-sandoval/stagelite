@@ -1,6 +1,5 @@
 class Event < ApplicationRecord
-    validates :title, :date, :time, :venue, :address,
-        :price, :capacity, :organizer_id, presence:true
+    validates :title, :date, :time, :venue, :address, :price, :capacity, :organizer_id, presence:true
     validates :age_restriction, inclusion:{in: [true, false] }
    
 
@@ -10,7 +9,7 @@ class Event < ApplicationRecord
         class_name: :User
 
 
-        # belongs_to :genre
+        belongs_to :genre
 
 
         has_one_attached :photo

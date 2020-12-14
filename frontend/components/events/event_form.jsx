@@ -15,10 +15,11 @@ class EventForm extends React.Component{
             address: '',
             price: '',
             age_restriction: '',
-            ticket_link: '',
-            quantity: '',
+            ticket_link: 'NA',
+            quantity: 1,
             photo: '',
-            
+            organizer_id: '',
+            genre_id: 12
         }  
         
 
@@ -44,8 +45,13 @@ class EventForm extends React.Component{
         formData.append('event[venue]', this.state.venue);
         formData.append('event[date]', this.state.date);
         formData.append('event[time]', this.state.time);
+        formData.append('event[price]', this.state.price);
+        formData.append('event[capacity]', this.state.capacity);
         formData.append('event[address]', this.state.address);
         formData.append('event[age_restriction]', this.state.age_restriction);
+        formData.append('event[genre_id]', this.state.genre_id);
+        formData.append('event[quantity]', this.state.quantity);
+        formData.append('event[ticket_link]', this.state.ticket_link);
 
         formData.append('event[organizer_id]', this.props.currentUser);
 
@@ -71,7 +77,7 @@ class EventForm extends React.Component{
 
     componentDidMount() {
         if (this.props.formType === 'edit') {
-            this.props.fetchEvent(this.props.id).then(() => {
+            this.props.fetchEvent(this.props.eventId).then(() => {
                 const { event } = this.props;
                     // this.setState(event);
                     this.setState({ id: event.id });
@@ -79,9 +85,11 @@ class EventForm extends React.Component{
                     this.setState({ time: event.time});
                     this.setState({ date: event.date });
                     this.setState({ price: event.price});
-                    this.setState({ genre: event.genre});
-                    this.setState({ price: event.price});
+                    this.setState({ capacity: event.capacity});
+                    this.setState({ genre_id: event.genre_id});
+                    this.setState({ quantity: event.quantity});
                     this.setState({ age_restriction: event.age_restriction});
+                    this.setState({ ticket_link: event.ticket_link});
 
             })
         }
@@ -129,7 +137,7 @@ render(){
                 placeholder="address"
                 onChange={this.update('address')} />
 
-            <input type="text"
+            <input type="integer"
                 value={this.state.capacity}
                 placeholder="capacity"
                 onChange={this.update('capacity')} />
@@ -155,12 +163,21 @@ render(){
             </div>
 
 
-            <input type="integer"
+            <input type="text"
                 value={this.state.price}
                 placeholder="price"
                 pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$"
                 onChange={this.update('price')} />
 
+{/* 
+            <label >Event Genre:</label>
+                <select id="genre" className="genre">
+                    <option onChange={this.update('genre_id')} value='11'>Rock</option>
+                    <option onChange={this.update('genre_id')} value='12'>Funk</option>
+                    <option onChange={this.update('genre_id')} value='13'>Disco</option>
+                    <option onChange={this.update('genre_id')} value='14'>Pop</option>
+                    <option onChange={this.update('genre_id')} value='15'>Electronic</option>
+                </select> */}
 
             {/* <input type="text"
                     value={this.state.ticket_link}

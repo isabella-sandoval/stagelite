@@ -3,9 +3,11 @@ class Api::EventsController < ApplicationController
     @event = Event.new(event_params)
 
     if @event.save
-      render 'api/events/show'
+      # render 'api/events/show'
+      render json:(yay)
+
     else
-      render json: {errors: "This event does not exist"}, status: 422
+      render json: @event.errors.full_messages, status: 422
     end
 
   #   @event = Event.new(event_params)
@@ -51,8 +53,7 @@ class Api::EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:title, :venue, :date, :time, :address,
-     :price, :capacity, :age_restriction, :organizer_id)
+    params.require(:event).permit(:title, :venue, :date, :time, :address, :genre_id, :price, :capacity, :age_restriction, :organizer_id, :quantity, :ticket_link)
   end
   
   
