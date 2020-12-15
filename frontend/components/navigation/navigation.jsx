@@ -26,10 +26,10 @@ const Navigation = ({ currentUser, logout }) => {
                             className="job"
                             target="_blank"
                             href="https://www.linkedin.com/in/isabella-sandoval-513025192/">
-                            <i class="fab fa-linkedin-in fa-2x"></i>
+                            <i className="fab fa-linkedin-in fa-2x"></i>
                         </a>
                     </div>
-                    <div className="help-dropdown-loggedin">Help</div>
+                    <div className="help-dropdown-loggedin">Attending</div>
                     {/* <ul className="help-dropdown-loggedin">Profile
                         <li className='nav-link'>Help</li>
                         <li className='nav-link'>My Events</li>
@@ -68,7 +68,7 @@ const Navigation = ({ currentUser, logout }) => {
                             className="job"
                             target="_blank"
                             href="https://www.linkedin.com/in/isabella-sandoval-513025192/">
-                            <i class="fab fa-linkedin-in fa-2x"></i>
+                            <i className="fab fa-linkedin-in fa-2x"></i>
                         </a>
                     </div>
 

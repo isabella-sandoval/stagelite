@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import EventShow from './event_show';
 import { fetchEvent } from '../../actions/event_actions';
+import { rsvpTicket } from '../../actions/ticket_actions'
 
 const mSTP = (state, ownProps) => {
     
@@ -12,7 +13,8 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => {
     return {
-        fetchEvent: (id) => dispatch(fetchEvent(id))
+        fetchEvent: (id) => dispatch(fetchEvent(id)),
+        rsvpTicket: (ticket) => dispatch(rsvpTicket(ticket))
     };
 };
 

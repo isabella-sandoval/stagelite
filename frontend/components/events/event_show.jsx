@@ -1,6 +1,6 @@
 import React from 'react';
 import Popup from './popup';
-
+import EventForm from './event_form';
 
 class EventShow extends React.Component{
     constructor(props){
@@ -48,9 +48,8 @@ class EventShow extends React.Component{
                         </div>
                    
                         <p className='event-title'>{event.title}</p>
-                        <p className='event-genre'>{event.genre_id}</p>
-                        <p className="organizer">organizer:{event.organizer_id}</p>
-                        {/* <p className="location">Location:</p> */}
+                        {/* <p className='event-genre'>{event.genre_id.title}</p> */}
+                       {event.organizer_id === this.props.currentUser ? <p className="organizer">You are the organizer</p> : <p className="organizer">organizer:{event.organizer_id}</p>}
                         <p className="venue-name">{event.venue}</p>
                         <p className='address'> {event.address}</p>
     
@@ -66,7 +65,7 @@ class EventShow extends React.Component{
                             <div className="date">{event.time.hour}:0{event.time.min} </div> :
                             <div className="date">{event.time.hour}:{event.time.min} </div>
                             }
-                   <button className='tickets' onClick={this.togglePopup.bind(this)}>RSVP</button>
+                       {event.organizer_id === this.props.currentUser ? <button className='edit_event' onClick={this.props.edit}>Edit Event</button> : <button className='tickets' onClick={this.togglePopup.bind(this)}>RSVP</button>}
                     </div>
 
                    {this.state.showPopup ?

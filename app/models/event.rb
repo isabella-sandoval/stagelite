@@ -11,7 +11,8 @@ class Event < ApplicationRecord
 
         belongs_to :genre
 
-
+        has_many :tickets
+        
         has_one_attached :photo
 
     

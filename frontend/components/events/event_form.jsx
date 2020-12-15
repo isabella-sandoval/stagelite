@@ -17,7 +17,8 @@ class EventForm extends React.Component{
             age_restriction: '',
             ticket_link: 'NA',
             quantity: 1,
-            photo: '',
+            img_url: '',
+            photoFile: null,
             organizer_id: '',
             genre_id: 12
         }  
@@ -52,13 +53,12 @@ class EventForm extends React.Component{
         formData.append('event[genre_id]', this.state.genre_id);
         formData.append('event[quantity]', this.state.quantity);
         formData.append('event[ticket_link]', this.state.ticket_link);
-
         formData.append('event[organizer_id]', this.props.currentUser);
 
-        this.props.processForm(formData)
+        // this.props.processForm(formData)
 
         if (this.state.photoFile) {
-            formData.append('event[photo]', this.state.photo);
+            formData.append('event[photo]', this.state.photoFile);
         }
 
         if (this.props.formType === 'edit') {
@@ -100,14 +100,18 @@ class EventForm extends React.Component{
         const file = e.currentTarget.files[0];
         const fileReader = new FileReader();
         fileReader.onloadend = () => {
-            this.setState({ photoFile: file, imageUrl: fileReader.result });
+            this.setState({ photoFile: file, img_url: fileReader.result });
         };
-       
+
+        if (file) {
+            fileReader.readAsDataURL(file);
+        };
     }
 
 
 render(){
-    const preview = this.state.imageUrl ? <img className="preview" src={this.state.imageUrl} /> : null;
+    console.log(this.state)
+    const preview = this.state.img_url ? <img className="preview" src={this.state.img_url} /> : null;
     return(
     <div>
         <form className="event-form">

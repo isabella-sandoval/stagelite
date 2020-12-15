@@ -2,6 +2,7 @@ import React from 'react';
 
 const months = ['January', 'Febuary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 class Popup extends React.Component {
+
     render() {
         return (
             <div className='popup'>
