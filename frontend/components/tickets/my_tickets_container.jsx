@@ -7,8 +7,8 @@ import { fetchEvents } from '../../actions/event_actions';
 const mSTP = state => {
     return ({
         currentUser: state.session.id,
-        tickets: Object.values(state.entities.tickets),
-        events: state.entities.events
+        tickets: Object.values(state.entities.tickets)
+        // events: state.entities.events
     })
 };
 

@@ -12,7 +12,7 @@ import Navigation from './navigation/navigation';
 import NavigationContainer from './navigation/nav_container';
 import EventShowContainer from './events/event_show_container';
 import CreateEventContainer from './events/create_event_container';
-// import MyTicketsContainer from './tickets/my_tickets_container';
+import MyTicketsContainer from './tickets/my_tickets_container';
 
 const App = () => (
     <div className="app">
@@ -29,7 +29,7 @@ const App = () => (
                 <Route exact path="/events/" component = { EventIndexContainer } />
                 
                 <Route exact path='/event/:eventId' component={EventShowContainer} />
-       
+                <Route exact path='/mytickets' component={MyTicketsContainer} />
                 <Route exact path='/error' component={Error}/>
                 <Redirect to="/error" />
 

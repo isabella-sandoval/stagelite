@@ -4,7 +4,7 @@ import React from 'react';
 class MyTickets extends React.Component {
 
     componentDidMount() {
-        this.props.fetchTickets(this.props.user.id).then(() => {
+        this.props.fetchTickets(this.props.currentUser).then(() => {
             this.props.fetchEvents();
         })
     }
