@@ -9,17 +9,35 @@ class EventShow extends React.Component{
         
         this.state = { showPopup: false };
         this.togglePopup = this.togglePopup.bind(this);
+        this.rsvp = this.rsvp.bind(this)
     }
 
+    
     togglePopup() {
+        // const formData = new FormData();
+
+        //  formData.append('ticket[event_id]', this.props.match.params.eventId);
+        //  formData.append('ticket[quantity]', 1);
+        //  this.props.rsvpTicket(formData)
         if (this.props.currentUser){
-        this.setState({
-            showPopup: !this.state.showPopup
-        })} else{
-            this.props.history.push("/login")
+            this.setState({
+                showPopup: !this.state.showPopup
+                
+            })} else{
+                this.props.history.push("/login")
         }
     }
 
+    rsvp(){
+        const formData = new FormData();
+
+        formData.append('ticket[event_id]', this.props.match.params.eventId);
+        formData.append('ticket[quantity]', 1);
+        formData.append('ticket[user_id]', this.props.currentUser )
+        this.props.rsvpTicket(formData)
+
+        this.togglePopup.bind(this)
+    }
     
     componentDidMount(){
         const eventId = this.props.match.params.eventId;
@@ -65,7 +83,7 @@ class EventShow extends React.Component{
                             <div className="date">{event.time.hour}:0{event.time.min} </div> :
                             <div className="date">{event.time.hour}:{event.time.min} </div>
                             }
-                       {event.organizer_id === this.props.currentUser ? <button className='edit_event' onClick={this.props.edit}>Edit Event</button> : <button className='tickets' onClick={this.togglePopup.bind(this)}>RSVP</button>}
+                       {event.organizer_id === this.props.currentUser ? <button className='edit_event' onClick={this.props.edit}>Edit Event</button> : <button className='tickets' onClick={this.rsvp()}>RSVP</button>}
                     </div>
 
                    {this.state.showPopup ?

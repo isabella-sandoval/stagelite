@@ -29,7 +29,11 @@ const Navigation = ({ currentUser, logout }) => {
                             <i className="fab fa-linkedin-in fa-2x"></i>
                         </a>
                     </div>
-                    <div className="help-dropdown-loggedin">Attending</div>
+
+                    <div className="attending-button">
+                        <Link to="/myrsvp" className="mytix">Attending</Link>
+                    </div>
+
                     {/* <ul className="help-dropdown-loggedin">Profile
                         <li className='nav-link'>Help</li>
                         <li className='nav-link'>My Events</li>

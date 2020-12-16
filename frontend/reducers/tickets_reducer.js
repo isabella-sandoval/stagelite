@@ -3,16 +3,17 @@ import {
     RECEIVE_TICKETS
 } from '../actions/ticket_actions';
 
-const ticketsReducer = (state = {}, action) => {
-    Object.freeze(state);
+const ticketsReducer = (oldState = {}, action) => {
+    Object.freeze(oldState);
 
     switch (action.type) {
         case RECEIVE_TICKET:
-            return Object.assign({}, state, { [action.ticket.id]: action.ticket });
+            return Object.assign({}, oldState, { [action.ticket.id]: action.ticket });
         case RECEIVE_TICKETS:
-            return Object.assign({}, state, action.tickets);
+            return Object.assign({}, oldState, action.tickets);
+            
         default:
-            return state;
+            return oldState;
     }
 }
 

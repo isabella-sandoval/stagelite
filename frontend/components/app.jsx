@@ -24,12 +24,12 @@ const App = () => (
                 <AuthRoute exact path='/login' component={LoginFormContainer} />
                 <AuthRoute exact path='/signup' component={SignupFormContainer} />
                 <ProtectedRoute exact path='/event/new' component={CreateEventContainer} formType='new' />
+                <ProtectedRoute exact path='/myrsvp' component={MyTicketsContainer} />
                 {/* <ProtectedRoute exact path='/event/new' component={CreateEventContainer} formType='new' /> */}
                 
                 <Route exact path="/events/" component = { EventIndexContainer } />
                 
                 <Route exact path='/event/:eventId' component={EventShowContainer} />
-                <Route exact path='/mytickets' component={MyTicketsContainer} />
                 <Route exact path='/error' component={Error}/>
                 <Redirect to="/error" />
 

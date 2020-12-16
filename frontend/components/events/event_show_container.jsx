@@ -14,6 +14,8 @@ const mSTP = (state, ownProps) => {
 const mDTP = dispatch => {
     return {
         fetchEvent: (id) => dispatch(fetchEvent(id)),
+        // fetchTickets: userId => dispatch(fetchTickets(userId)),
+        // fetchEvents: () => dispatch(fetchEvents()),
         rsvpTicket: (ticket) => dispatch(rsvpTicket(ticket))
     };
 };

@@ -1,5 +1,6 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
+import MyTicketItem from './my_ticket_item';
 
 class MyTickets extends React.Component {
 
@@ -11,22 +12,27 @@ class MyTickets extends React.Component {
 
     render() {
         if (this.props.events && this.props.tickets) {
-            // return (
-            //   <div className="my-tickets">
-            //     <div className="user-name">Hey, {this.props.user.first_name}!</div>
-            //     {this.props.tickets.map(ticket => {
-            //       return (
-            //         <MyTicketItem 
-            //           key={ticket.id}
-            //           ticket={ticket}
-            //           event={this.props.events[ticket.event_id]} />
-            //       )
-            //     })}
-            //   </div>
-            // )
-            return <div>success</div>
+            return (
+              <div className="my-tickets">
+                <div className="your-attending">Lots of cool plans ahead! You are RSVP'd for the events listed.</div>
+                {this.props.tickets.map(ticket => {
+                  return (
+                    <MyTicketItem 
+                    key={ticket.id}
+                    ticket={ticket}
+                    event={this.props.events[ticket.event_id]} />
+                  )
+                })}
+              </div>
+            )
+            
         } else {
-            return <div>no event</div>
+            return <div className="no-tickets-message">You have not RSVP'd to any events yet. 
+                        <div>
+                    <br></br>
+                            <Link to="/"> Check out our upcoming events!</Link>
+                        </div>
+                    </div>
         }
     }
 }

@@ -7,7 +7,6 @@ import Navigation from './navigation';
 
 
 const mSTP = state => {
-
   return (
     {
       navLink: <Link className="to-signup" to="/signup">sign up</Link>,

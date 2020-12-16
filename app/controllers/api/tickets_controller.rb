@@ -13,9 +13,9 @@ class Api::TicketsController < ApplicationController
     def destroy
     end
 
-    # def index
-    #     @tickets = Ticket.where(user_id: params[:user_id])
-    # end
+    def index
+        @tickets = Ticket.where(user_id: params[:user_id])
+    end
 
 
     private

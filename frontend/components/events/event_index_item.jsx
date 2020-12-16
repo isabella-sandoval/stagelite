@@ -24,9 +24,6 @@ class EventIndexItem extends React.Component {
                                 {/* <p className='age-rest'>Event 21+? {age_restriction}</p> */}
                                 {/* {quantity >= capacity} ? <p>Sold out</p> : <p className='ticket-link'>{ticket_link}</p> */}
                             </p>
-
-
-                   
                     
                     </div>
                 </Link>
