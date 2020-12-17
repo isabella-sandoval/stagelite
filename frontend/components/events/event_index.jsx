@@ -30,16 +30,16 @@ class EventIndex extends React.Component {
                     <p>post COVID utopian!</p>
                 </div>
                 
-            <div className="all-events-container">
-            <SearchBar events={events}/>  
-          
-                
-                {/* <div className="event-images">
-                    <ul>
-                        {Object.values(events).map(event => { return <EventIndexItem event={event} key={event.id} />})}
-                    </ul>
-                </div> */}
-            </div>
+                <div className="all-events-container">
+                <SearchBar events={events}/>  
+            
+    {/*                 
+                    <div className="event-images">
+                        <ul>
+                            {Object.values(events).map(event => { return <EventIndexItem event={event} key={event.id} />})}
+                        </ul>
+                    </div> */}
+                </div>
   
             </div>
         )

@@ -1,4 +1,12 @@
 
+.rsvp-body{
+     width: 80vw;
+    height: 21vw;
+    margin-left: 10vw;
+    position: relative;
+    display:flex;
+}
+
 
 .no-tickets-message{
     display: flex;
@@ -10,3 +18,23 @@
     color: gray;
     align-items: center;
 }                    
+
+.ticket-index-item{
+    display:block;
+// -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  display: block flex;
+  justify-content: center;
+}
+
+.rsvp-text{
+    -webkit-box-align: center;
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    z-index: 2;
+    color: #1e0a3c;
+    font-weight: 800;
+    white-space: pre;
+    padding-left:10px
+}

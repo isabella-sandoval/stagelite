@@ -14,15 +14,21 @@ class MyTickets extends React.Component {
         if (this.props.events && this.props.tickets) {
             return (
               <div className="my-tickets">
-                <div className="your-attending">Lots of cool plans ahead! You are RSVP'd for the events listed.</div>
-                {this.props.tickets.map(ticket => {
-                  return (
-                    <MyTicketItem 
-                    key={ticket.id}
-                    ticket={ticket}
-                    event={this.props.events[ticket.event_id]} />
+                    <div className="rsvp-body">
+                      <div className="all-events-container">
+                          <div className="event-images">
+                            <p className="rsvp-text">Lots of cool plans ahead! You are RSVP'd for the events listed below.</p>
+                            <ul>
+                              {this.props.tickets.map(ticket => { return <MyTicketItem 
+                                        key={ticket.id}
+                                        ticket={ticket}
+                                        event={this.props.events[ticket.event_id]} /> })}
+                              </ul>
+                                    </div>
+                                  </div>
+                                </div>
                   )
-                })}
+               
               </div>
             )
             
