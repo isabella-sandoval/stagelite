@@ -4,9 +4,8 @@ import { Link } from 'react-router-dom';
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
-const MyTicketItem = ({ ticket, event }) => {
+const MyTicketItem = ({ event }) => {
     return (
-    
             <div className='event-index-item'>
 
                 <Link className="event-ind-link" to={`/event/${event.id}`}>

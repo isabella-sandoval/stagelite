@@ -13,6 +13,7 @@ import NavigationContainer from './navigation/nav_container';
 import EventShowContainer from './events/event_show_container';
 import CreateEventContainer from './events/create_event_container';
 import MyTicketsContainer from './tickets/my_tickets_container';
+import EditEventContainer from './events/edit_event_container'
 
 const App = () => (
     <div className="app">
@@ -24,6 +25,7 @@ const App = () => (
                 <AuthRoute exact path='/login' component={LoginFormContainer} />
                 <AuthRoute exact path='/signup' component={SignupFormContainer} />
                 <ProtectedRoute exact path='/event/new' component={CreateEventContainer} formType='new' />
+            <ProtectedRoute path='/event/:eventId/edit' component={EditEventContainer} formType='edit' />
                 <ProtectedRoute exact path='/myrsvp' component={MyTicketsContainer} />
                 {/* <ProtectedRoute exact path='/event/new' component={CreateEventContainer} formType='new' /> */}
                 

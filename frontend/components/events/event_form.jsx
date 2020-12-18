@@ -20,7 +20,7 @@ class EventForm extends React.Component{
             img_url: '',
             photoFile: null,
             organizer_id: '',
-            genre_id: 12
+            genre_id: ''
         }  
         
 
@@ -54,6 +54,7 @@ class EventForm extends React.Component{
         formData.append('event[quantity]', this.state.quantity);
         formData.append('event[ticket_link]', this.state.ticket_link);
         formData.append('event[organizer_id]', this.props.currentUser);
+        
 
         // this.props.processForm(formData)
 
@@ -65,12 +66,14 @@ class EventForm extends React.Component{
             formData.append('event[id]', this.state.id);
         }
 
-
+        //not updating
         this.props.processForm(formData).then(
-            railsitem => {
-                this.props.history.push(`/event/${railsitem.event.id}`);
-            }
+           
+                this.props.history.push(`/event/${this.props.event.id}`)
+          
         );
+
+   
     }
 
 
@@ -79,11 +82,11 @@ class EventForm extends React.Component{
         if (this.props.formType === 'edit') {
             this.props.fetchEvent(this.props.eventId).then(() => {
                 const { event } = this.props;
-                    // this.setState(event);
-                    this.setState({ id: event.id });
+                    this.setState(event);
+                    // this.setState({ id: event.id });
                     this.setState({ title: event.title });
-                    this.setState({ time: event.time});
-                    this.setState({ date: event.date });
+                    this.setState({ time: event.time.time.slice(-13, -8) });
+                    this.setState({ date: event.date.date });
                     this.setState({ price: event.price});
                     this.setState({ capacity: event.capacity});
                     this.setState({ genre_id: event.genre_id});
@@ -173,7 +176,7 @@ render(){
                 pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$"
                 onChange={this.update('price')} />
 
-{/* 
+
             <label >Event Genre:</label>
                 <select id="genre" className="genre">
                     <option onChange={this.update('genre_id')} value='11'>Rock</option>
@@ -181,7 +184,7 @@ render(){
                     <option onChange={this.update('genre_id')} value='13'>Disco</option>
                     <option onChange={this.update('genre_id')} value='14'>Pop</option>
                     <option onChange={this.update('genre_id')} value='15'>Electronic</option>
-                </select> */}
+                </select>
 
             {/* <input type="text"
                     value={this.state.ticket_link}
@@ -197,6 +200,7 @@ render(){
                             value="true"
                             onChange={this.update('age_restriction')}
                             type="radio"
+                            name="options"
                            
                         />
                         No
@@ -205,6 +209,7 @@ render(){
                             value="false"
                             onChange={this.update('age_restriction')}
                             type="radio"
+                            name="options"
                             
                         />
                 </div>

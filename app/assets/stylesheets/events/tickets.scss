@@ -35,6 +35,14 @@
     z-index: 2;
     color: #1e0a3c;
     font-weight: 800;
-    white-space: pre;
-    padding-left:10px
+    // white-space: pre;
+    padding-left:1em;
+    padding-right: 1em;
+    padding-bottom: 2.7em;
+}
+
+.all-tix-container{
+    display:block;
+    padding-top: 5%;
+    background-color: gainsboro;
 }

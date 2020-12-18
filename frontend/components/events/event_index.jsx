@@ -15,6 +15,7 @@ class EventIndex extends React.Component {
 
     componentDidMount() {
         this.props.fetchEvents();
+        this.props.fetchTickets(this.props.currentUser.id)
     }
 
     render(){

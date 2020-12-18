@@ -11,8 +11,9 @@ const mSTP = (state, ownProps) => ({
 });
 
 const mDTP = dispatch => ({
-    processForm: event => dispatch(updateEvent(event))
-    // fetchEvent: id => dispatch(fetchEvent(id))
+    processForm: event => dispatch(updateEvent(event)),
+    fetchEvent: id => dispatch(fetchEvent(id)),
+    updateEvent: eventId => dispatch(updateEvent(eventId))
 });
 
 export default connect(mSTP, mDTP)(EventForm);

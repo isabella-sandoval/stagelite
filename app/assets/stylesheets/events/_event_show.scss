@@ -95,11 +95,11 @@
 
 
 .organizer{
-   color: gray;
-   font-weight: 400;
-   font-size: 16px;
-   padding-top: 15px;
-   text-transform: uppercase;
+   // color: gray;
+   font-weight: 500;
+   font-size: 15px;
+   padding-top: 13px;
+   // text-transform: uppercase;
 }
 
 .venue-name{
@@ -113,8 +113,8 @@
    padding-top: 8px;
    color: #2a2a2a;
     line-height: 1.4rem;
-    font-size: 15px;
-    font-weight: 400;
+    font-size: 16px;
+    font-weight: 500;
 }
 
 
@@ -152,6 +152,7 @@
 }
 
 .edit_event{
+   
    background-color: rgb(63, 108, 122);
    border-radius: 5px;
    width: 100%;
@@ -164,6 +165,10 @@
    color: white;
    font-size: 20px;
    letter-spacing: 1px;
+}
+
+.edit_event a{
+   text-decoration: none;
 }
 
 .tickets:hover{

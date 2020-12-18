@@ -1,5 +1,6 @@
 import React from 'react';
 import Popup from './popup';
+import { Link } from 'react-router-dom';
 
 class EventShow extends React.Component{
     constructor(props){
@@ -7,8 +8,9 @@ class EventShow extends React.Component{
        
         
         this.state = { showPopup: false };
-        this.togglePopup = this.togglePopup.bind(this)
+        this.togglePopup = this.togglePopup.bind(this);
         this.rsvp = this.rsvp.bind(this)
+        
     }
 
     
@@ -18,6 +20,7 @@ class EventShow extends React.Component{
                 showPopup: !this.state.showPopup
             })
         } else {
+     
             this.props.history.push("/login")
         }
     }
@@ -38,14 +41,17 @@ class EventShow extends React.Component{
     
     componentDidMount(){
         const eventId = this.props.match.params.eventId;
-        this.props.fetchEvent(eventId);
+        // this.props.fetchEvent(eventId);
+        this.props.fetchTickets(this.props.currentUser.id);
     }
 
     render(){
         const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
         const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
         const { event } = this.props;
-        
+        const{
+            
+        }
         if(!this.props.event) return null;
         
        return(
@@ -63,7 +69,7 @@ class EventShow extends React.Component{
                         </div>
                    
                         <p className='event-title'>{event.title}</p>
-                        {/* <p className='event-genre'>{event.genre_id.title}</p> */}
+                        <p className='event-genre'>{event.genre_id}</p>
                        {event.organizer_id === this.props.currentUser ? <p className="organizer">You are the organizer</p> : <p className="organizer">organizer:{event.organizer_id}</p>}
                         <p className="venue-name">{event.venue}</p>
                         <p className='address'> {event.address}</p>
@@ -80,7 +86,7 @@ class EventShow extends React.Component{
                             <div className="date">{event.time.hour}:0{event.time.min} </div> :
                             <div className="date">{event.time.hour}:{event.time.min} </div>
                             }
-                       {event.organizer_id === this.props.currentUser ? <button className='edit_event' onClick={this.props.edit}>Edit Event</button> : <button className='tickets' onClick={this.rsvp}>RSVP</button>}
+                       {event.organizer_id === this.props.currentUser ? <button className='edit_event'><Link className='option' to={`/event/${this.props.event.id}/edit`}>Edit</Link></button> : <button className='tickets' onClick={this.rsvp}>RSVP</button>}
                     </div>
 
                    {this.state.showPopup ?
