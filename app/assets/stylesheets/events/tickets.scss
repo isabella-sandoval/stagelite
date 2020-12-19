@@ -4,7 +4,7 @@
     height: 21vw;
     margin-left: 10vw;
     position: relative;
-    display:flex;
+    // display:flex;
 }
 
 
@@ -32,7 +32,7 @@
     display: flex;
     align-items: center;
     font-size: 2rem;
-    z-index: 2;
+    z-index: 1;
     color: #1e0a3c;
     font-weight: 800;
     // white-space: pre;
@@ -42,7 +42,17 @@
 }
 
 .all-tix-container{
+    height: 80%;
     display:block;
     padding-top: 5%;
     background-color: gainsboro;
 }
+
+.remove-ticket{
+    // margin-bottom: -10px;
+    // float: right;
+    display:flex;
+    background-color:#d1410c;
+    z-index: 2;
+}
+

@@ -17,10 +17,11 @@ class EventForm extends React.Component{
             age_restriction: '',
             ticket_link: 'NA',
             quantity: 1,
-            img_url: '',
+            imgUrl: '',
             photoFile: null,
-            organizer_id: '',
-            genre_id: ''
+            organizer_id: 17,
+            genre_id: 14,
+            
         }  
         
 
@@ -40,6 +41,7 @@ class EventForm extends React.Component{
         e.preventDefault();
         const UserEvent = Object.assign({}, this.state);
         const formData = new FormData();
+        const curUser = this.props.currentUser;
 
 
         formData.append('event[title]', this.state.title);
@@ -53,7 +55,6 @@ class EventForm extends React.Component{
         formData.append('event[genre_id]', this.state.genre_id);
         formData.append('event[quantity]', this.state.quantity);
         formData.append('event[ticket_link]', this.state.ticket_link);
-        formData.append('event[organizer_id]', this.props.currentUser);
         
 
         // this.props.processForm(formData)
@@ -103,7 +104,7 @@ class EventForm extends React.Component{
         const file = e.currentTarget.files[0];
         const fileReader = new FileReader();
         fileReader.onloadend = () => {
-            this.setState({ photoFile: file, img_url: fileReader.result });
+            this.setState({ photoFile: file, imgUrl: fileReader.result });
         };
 
         if (file) {
@@ -114,7 +115,7 @@ class EventForm extends React.Component{
 
 render(){
     console.log(this.state)
-    const preview = this.state.img_url ? <img className="preview" src={this.state.img_url} /> : null;
+    const preview = this.state.imgUrl ? <img className="preview" src={this.state.imgUrl} /> : null;
     return(
     <div>
         <form className="event-form">
@@ -177,14 +178,14 @@ render(){
                 onChange={this.update('price')} />
 
 
-            <label >Event Genre:</label>
+            {/* <label >Event Genre:</label>
                 <select id="genre" className="genre">
                     <option onChange={this.update('genre_id')} value='11'>Rock</option>
                     <option onChange={this.update('genre_id')} value='12'>Funk</option>
                     <option onChange={this.update('genre_id')} value='13'>Disco</option>
                     <option onChange={this.update('genre_id')} value='14'>Pop</option>
                     <option onChange={this.update('genre_id')} value='15'>Electronic</option>
-                </select>
+                </select> */}
 
             {/* <input type="text"
                     value={this.state.ticket_link}

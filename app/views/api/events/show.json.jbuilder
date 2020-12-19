@@ -15,5 +15,5 @@
         end
 
 
-        json.img_url url_for(@event.photo)
+        json.imgUrl url_for(@event.photo)
 end

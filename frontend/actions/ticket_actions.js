@@ -18,6 +18,14 @@ export const rsvpTicket = ticket => dispatch => {
             errors => dispatch(receiveTicketErrors(errors.responseJSON)))
 };
 
+
+export const deleteTicket = id => dispatch => {
+    return TicketApiUtil.deleteTicket(id)
+        .then(id => dispatch(removeTicket(id)),
+            errors => dispatch(receiveTicketErrors(errors.responseJSON)))
+};
+
+
 export const receiveTicket = ticket => {
     return ({
         type: RECEIVE_TICKET,
@@ -36,5 +44,12 @@ export const receiveTicketErrors = errors => {
     return ({
         type: RECEIVE_TICKET_ERRORS,
         errors
+    })
+};
+
+export const removeTicket = id => {
+    return ({
+        type: REMOVE_TICKET,
+        id
     })
 };

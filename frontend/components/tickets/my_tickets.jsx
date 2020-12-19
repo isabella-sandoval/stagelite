@@ -9,7 +9,7 @@ class MyTickets extends React.Component {
   }
 
   render() {
-    if (this.props.events && this.props.tickets) {
+    if (this.props.events && (this.props.tickets.length >= 1)) {
       return (
         <div className="my-tickets">
           <div className="rsvp-body">
@@ -21,7 +21,8 @@ class MyTickets extends React.Component {
                     return <MyTicketItem
                       key={ticket.id}
                       ticket={ticket}
-                      event={this.props.events[ticket.event_id - 1]} />
+                      event={this.props.events[ticket.event_id - 1]}
+                      deleteTicket={this.props.deleteTicket} />
                   })}
                 </ul>
               </div>
@@ -33,8 +34,7 @@ class MyTickets extends React.Component {
       )
 
     } else {
-      return <div className="no-tickets-message">You have not RSVP'd to any events yet.
-                        <div>
+      return <div className="no-tickets-message">You have not RSVP'd to any events yet.<div>
           <br></br>
           <Link to="/"> Check out our upcoming events!</Link>
         </div>

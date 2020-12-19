@@ -1,8 +1,8 @@
 
 import { connect } from "react-redux";
 import MyTickets from "./my_tickets";
-import { fetchTickets } from '../../actions/ticket_actions';
-import { fetchEvents} from '../../actions/event_actions';
+import { fetchTickets, deleteTicket } from '../../actions/ticket_actions';
+import { fetchEvents } from '../../actions/event_actions';
 
 const mSTP = state => {
     // debugger
@@ -17,7 +17,8 @@ const mSTP = state => {
 const mDTP = dispatch => {
     return ({
         fetchTickets: userId => dispatch(fetchTickets(userId)),
-        fetchEvents: () => dispatch(fetchEvents())
+        fetchEvents: () => dispatch(fetchEvents()),
+        deleteTicket: id => dispatch(deleteTicket(id))
     })
 };
 

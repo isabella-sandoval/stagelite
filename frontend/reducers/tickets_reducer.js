@@ -1,6 +1,7 @@
 import {
     RECEIVE_TICKET,
-    RECEIVE_TICKETS
+    RECEIVE_TICKETS,
+    REMOVE_TICKET
 } from '../actions/ticket_actions';
 
 const ticketsReducer = (oldState = {}, action) => {
@@ -12,6 +13,10 @@ const ticketsReducer = (oldState = {}, action) => {
         case RECEIVE_TICKETS:
             return Object.assign({}, oldState, action.tickets);
             
+        case REMOVE_TICKET:
+            delete oldState[action.id];
+            return oldState;
+
         default:
             return oldState;
     }

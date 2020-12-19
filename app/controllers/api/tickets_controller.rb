@@ -9,8 +9,14 @@ class Api::TicketsController < ApplicationController
             render json: @ticket.errors.full_messages, status: 422
         end
     end
-
+    
     def destroy
+        @ticket = Ticket.find(params[:id])
+         if @ticket.destroy
+           
+         else
+            render json: @ticket.errors.full_messages, status: 422
+         end    
     end
 
     def index
