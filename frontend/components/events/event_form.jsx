@@ -19,7 +19,7 @@ class EventForm extends React.Component{
             quantity: 1,
             imgUrl: '',
             photoFile: null,
-            organizer_id: 17,
+            organizer_id: '',
             genre_id: 14,
             
         }  
