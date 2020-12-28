@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { updateEvent, fetchEvent } from '../../actions/event_actions';
+import { updateEvent, fetchEvent, deleteEvent } from '../../actions/event_actions';
 import EventForm from './event_form';
 
 const mSTP = (state, ownProps) => ({
@@ -13,7 +13,8 @@ const mSTP = (state, ownProps) => ({
 const mDTP = dispatch => ({
     processForm: event => dispatch(updateEvent(event)),
     fetchEvent: id => dispatch(fetchEvent(id)),
-    updateEvent: eventId => dispatch(updateEvent(eventId))
+    updateEvent: eventId => dispatch(updateEvent(eventId)),
+    deleteEvent: id => dispatch(deleteEvent(id))
 });
 
 export default connect(mSTP, mDTP)(EventForm);

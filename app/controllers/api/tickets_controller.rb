@@ -4,7 +4,7 @@ class Api::TicketsController < ApplicationController
         @ticket.user_id = current_user.id
 
         if @ticket.save
-            render 'api/tickets/show'
+            render 'api/tickets/index'
         else
             render json: @ticket.errors.full_messages, status: 422
         end
@@ -13,7 +13,7 @@ class Api::TicketsController < ApplicationController
     def destroy
         @ticket = Ticket.find(params[:id])
          if @ticket.destroy
-           
+           render 'api/tickets/index'
          else
             render json: @ticket.errors.full_messages, status: 422
          end    

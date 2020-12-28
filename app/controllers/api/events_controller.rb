@@ -2,11 +2,10 @@ class Api::EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.organizer_id = current_user.id
-    # @event.genre_id = genre.id
 
     if @event.save
-      @event = Event.find(params[:id])
-      render 'api/events/show'
+      # @event = Event.find(params[:id])
+      render :show
   
 
     else
@@ -38,17 +37,12 @@ class Api::EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
-    render 'api/events/show'
+    render :show
   end  
 
   def destroy
-      @event = Event.find_by(id: params[:id])
-
-        if @event.destroy
-            render :show
-        else
-            render json: @event.errors.full_messages, status: 422
-        end
+    @event = Event.find(params[:id])
+    @event.destroy
   end
 
 

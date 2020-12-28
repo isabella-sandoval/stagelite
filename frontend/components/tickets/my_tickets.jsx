@@ -19,7 +19,7 @@ class MyTickets extends React.Component {
                 <ul>
                   {this.props.tickets.map(ticket => {
                     return <MyTicketItem
-                      key={ticket.id}
+                      // key={ticket.id}
                       ticket={ticket}
                       event={this.props.events[ticket.event_id -1]} //broke
                       deleteTicket={this.props.deleteTicket} />

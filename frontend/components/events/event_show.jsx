@@ -68,7 +68,7 @@ class EventShow extends React.Component{
                         </div>
                    
                         <p className='event-title'>{event.title}</p>
-                        <p className='event-genre'>{event.genre_id}</p>
+                        {/* <p className='event-genre'>{event.genre_id}</p> */}
                        {event.organizer_id === this.props.currentUser ? <p className="organizer">You are the organizer</p> : <p className="organizer">organizer:{event.organizer_id}</p>}
                         <p className="venue-name">{event.venue}</p>
                         <p className='address'> {event.address}</p>

@@ -1,6 +1,7 @@
 import React from 'react';
 import eventsReducer from '../../reducers/events_reducer';
 import { Redirect } from 'react-router';
+import { deleteEvent } from '../../util/event_api_util';
 
 class EventForm extends React.Component{
     constructor(props){
@@ -19,7 +20,7 @@ class EventForm extends React.Component{
             quantity: 1,
             imgUrl: '',
             photoFile: null,
-            organizer_id: '',
+            // organizer_id: '',
             genre_id: 14,
             
         }  
@@ -70,7 +71,7 @@ class EventForm extends React.Component{
         //not updating
         this.props.processForm(formData).then(
            
-                this.props.history.push(`/event/${this.props.event.id}`)
+                this.props.history.push(`/event/${this.props.eventId}`)
           
         );
 
@@ -240,9 +241,12 @@ render(){
                     </div>
 
             <div className='event-error-messages'>{this.props.errors ? this.props.errors.join(', ') : null}</div>
-                <input className="event-submit" type="submit" value='Submit' onClick={this.handleSubmit}/>
+            
+            <input className="event-submit" type="submit" value='Submit' onClick={this.handleSubmit}/>
 
+            {this.props.formType === 'edit' ? <button className="event-submit" onClick={() => this.props.deleteEvent(this.props.eventId)}>Delete Event</button> : null}
         </form>
+
     </div>
 
     )
@@ -253,19 +257,5 @@ render(){
 export default EventForm;
 
 
-// add Dynos 
-
-
-// adjust words and date in box
-
-// dropdown to show who you
-
-// edit and delete events
-
-// pop up when added to event
-
-//search bar
-
-//about links for both projects
 
 
