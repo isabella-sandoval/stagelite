@@ -21,7 +21,7 @@ class MyTickets extends React.Component {
                     return <MyTicketItem
                       key={ticket.id}
                       ticket={ticket}
-                      event={this.props.events[ticket.event_id - 1]}
+                      event={this.props.events[ticket.event_id -1]} //broke
                       deleteTicket={this.props.deleteTicket} />
                   })}
                 </ul>
