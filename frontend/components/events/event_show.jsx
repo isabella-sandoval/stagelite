@@ -85,7 +85,8 @@ class EventShow extends React.Component{
                             <div className="date">{event.time.hour}:0{event.time.min} </div> :
                             <div className="date">{event.time.hour}:{event.time.min} </div>
                             }
-                       {event.organizer_id === this.props.currentUser ? <button className='edit_event'><Link className='option' to={`/event/${this.props.event.id}/edit`}>Edit</Link></button> : <button className='tickets' onClick={this.rsvp}>RSVP</button>}
+                       {/* {event.organizer_id === this.props.currentUser ? <button className='edit_event'><Link className='option' to={`/event/${this.props.event.id}/edit`}>Edit</Link></button> : <button className='tickets' onClick={this.rsvp}>RSVP</button>} */}
+                       {event.organizer_id === this.props.currentUser ? <button className='edit_event' onClick= {()=>this.props.history.push(`/event/${this.props.event.id}/edit`)}>Edit</button> : <button className='tickets' onClick={this.rsvp}>RSVP</button>}
                     </div>
 
                    {this.state.showPopup ?
@@ -114,21 +115,3 @@ class EventShow extends React.Component{
 export default EventShow;
 
 
-// rsvp(){
-    //     this.togglePopup.bind(this)
-
-    //     // const formData = new FormData();
-
-    //     // formData.append('ticket[event_id]', this.props.match.params.eventId);
-    //     // formData.append('ticket[quantity]', 1);
-    //     // formData.append('ticket[user_id]', this.props.currentUser )
-    //     // this.props.rsvpTicket(formData)
-
-    // }
-
-
-     // const formData = new FormData();
-
-        //  formData.append('ticket[event_id]', this.props.match.params.eventId);
-        //  formData.append('ticket[quantity]', 1);
-        //  this.props.rsvpTicket(formData)

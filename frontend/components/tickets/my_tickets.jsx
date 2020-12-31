@@ -3,12 +3,22 @@ import { Link } from 'react-router-dom';
 import MyTicketItem from './my_ticket_item';
 
 class MyTickets extends React.Component {
+  // constructor(props) {
+  //   super(props);
+
+  //   this.removeTicket = this.removeTicket.bind(this);
+  // }
 
   componentDidMount() {
    this.props.fetchTickets(this.props.currentUser.id)
   }
 
+  // removeTicket(){
+  //   this.props.deleteTicket().then(this.forceUpdate())
+  // };
+
   render() {
+    
     if (this.props.events && (this.props.tickets.length >= 1)) {
       return (
         <div className="my-tickets">
@@ -22,7 +32,7 @@ class MyTickets extends React.Component {
                       // key={ticket.id}
                       ticket={ticket}
                       event={this.props.events[ticket.event_id -1]} //broke
-                      deleteTicket={this.props.deleteTicket} />
+                      deleteTicket ={this.props.deleteTicket} />
                   })}
                 </ul>
               </div>

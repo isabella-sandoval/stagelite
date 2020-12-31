@@ -59,6 +59,7 @@ class EventForm extends React.Component{
         
 
         // this.props.processForm(formData)
+        console.log(this.props.events);
 
         if (this.state.photoFile) {
             formData.append('event[photo]', this.state.photoFile);
@@ -66,14 +67,16 @@ class EventForm extends React.Component{
 
         if (this.props.formType === 'edit') {
             formData.append('event[id]', this.state.id);
+            this.props.processForm(formData).then(()=>{this.props.history.push(`/event/${this.props.eventId}`)});
+        }else{
+    
+            this.props.processForm(formData).then(
+                this.props.history.push(`/event/${this.props.events[this.props.events.length-1].id+1}`));
+        
         }
 
-        //not updating
-        this.props.processForm(formData).then(
-           
-                this.props.history.push(`/event/${this.props.eventId}`)
           
-        );
+    
 
    
     }
@@ -97,6 +100,8 @@ class EventForm extends React.Component{
                     this.setState({ ticket_link: event.ticket_link});
 
             })
+        }else{
+            this.props.fetchEvents();
         }
     }
 
@@ -244,7 +249,7 @@ render(){
             
             <input className="event-submit" type="submit" value='Submit' onClick={this.handleSubmit}/>
 
-            {this.props.formType === 'edit' ? <button className="event-submit" onClick={() => this.props.deleteEvent(this.props.eventId)}>Delete Event</button> : null}
+            {this.props.formType === 'edit' ? <button className="event-submit" onClick={()=>this.props.deleteEvent(this.props.eventId).then(()=>this.props.history.push('/'))}>Delete Event</button> : null}
         </form>
 
     </div>
@@ -255,6 +260,7 @@ render(){
 }
 
 export default EventForm;
+
 
 
 
