@@ -55,11 +55,3 @@ class MyTickets extends React.Component {
 
 export default MyTickets;
 
-// var filteredTickets = [];
-// for (let i = 0; i < this.props.tickets.length; i++) {
-//   for (let j = 0; j < filteredTickets.length; j++) {
-//     if (this.props.tickets[i].event_id !== filteredTickets[j].event_id) {
-//       filteredTickets.push(this.props.tickets[i]);
-//     }
-//   }
-// }
