@@ -5,17 +5,14 @@ class Api::EventsController < ApplicationController
 
     if @event.save
       # @event = Event.find(params[:id])
-      render :show
+      render "api/events/show"
   
 
     else
       render json: @event.errors.full_messages, status: 422
     end
 
-  #   @event = Event.new(event_params)
-  #   if @event.date.class == Date && @event.time.class == Time
-  #     @event.date = Date.parse(@event.date.to_s)
-  #     @event.time = Time.parse(@event.time.to_s)
+ 
   end
 
   def update

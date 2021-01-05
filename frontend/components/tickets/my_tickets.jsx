@@ -11,10 +11,13 @@ class MyTickets extends React.Component {
 
   componentDidMount() {
    this.props.fetchTickets(this.props.currentUser.id)
+    // this.props.fetchTickets(this.props.currentUser.id).then(() => {
+    //   this.props.fetchEvents();
+    // })
   }
 
   // removeTicket(){
-  //   this.props.deleteTicket().then(this.forceUpdate())
+  //   this.props.deleteTicket().then(this.props.history.push(`/myrsvp`));
   // };
 
   render() {
@@ -32,7 +35,8 @@ class MyTickets extends React.Component {
                       // key={ticket.id}
                       ticket={ticket}
                       event={this.props.events[ticket.event_id -1]} //broke
-                      deleteTicket ={this.props.deleteTicket} />
+                      deleteTicket ={this.props.deleteTicket}
+                      currentUser = {this.props.currentUser} />
                   })}
                 </ul>
               </div>
@@ -55,3 +59,11 @@ class MyTickets extends React.Component {
 
 export default MyTickets;
 
+// var filteredTickets = [];
+// for (let i = 0; i < this.props.tickets.length; i++) {
+//   for (let j = 0; j < filteredTickets.length; j++) {
+//     if (this.props.tickets[i].event_id !== filteredTickets[j].event_id) {
+//       filteredTickets.push(this.props.tickets[i]);
+//     }
+//   }
+// }
