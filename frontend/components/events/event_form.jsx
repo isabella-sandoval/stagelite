@@ -21,7 +21,7 @@ class EventForm extends React.Component{
             imgUrl: '',
             photoFile: null,
             // organizer_id: '',
-            genre_id: 14,
+            genre_id: 6,
             
         }  
         
@@ -36,6 +36,15 @@ class EventForm extends React.Component{
         return e => {
             this.setState({ [field]: e.currentTarget.value })
         }
+    }
+    getEvent(eventId) {
+        let eventLookingFor;
+        this.props.events.forEach(event => {
+            if (event.id === eventId) {
+                eventLookingFor = event;
+            }
+        })
+        return eventLookingFor
     }
 
     handleSubmit(e) {
@@ -59,7 +68,7 @@ class EventForm extends React.Component{
         
 
         // this.props.processForm(formData)
-        console.log(this.props.events);
+        // console.log(this.props.events);
 
         if (this.state.photoFile) {
             formData.append('event[photo]', this.state.photoFile);
@@ -74,17 +83,13 @@ class EventForm extends React.Component{
                 this.props.history.push(`/event/${this.props.events[this.props.events.length-1].id+1}`));
         
         }
-
-          
-    
-
-   
     }
 
 
 
     componentDidMount() {
         if (this.props.formType === 'edit') {
+            this.props.fetchEvents();
             this.props.fetchEvent(this.props.eventId).then(() => {
                 const { event } = this.props;
                     this.setState(event);
@@ -100,8 +105,6 @@ class EventForm extends React.Component{
                     this.setState({ ticket_link: event.ticket_link});
 
             })
-        }else{
-            this.props.fetchEvents();
         }
     }
 
@@ -120,7 +123,8 @@ class EventForm extends React.Component{
 
 
 render(){
-    console.log(this.state)
+    // console.log(this.props.eventId)
+    // console.log(this.state)
     const preview = this.state.imgUrl ? <img className="preview" src={this.state.imgUrl} /> : null;
     return(
     <div>

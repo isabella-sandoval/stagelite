@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-
+Ticket.destroy_all
 User.destroy_all
 
 demouser = User.create!(email:'demo@user', password: 'password')

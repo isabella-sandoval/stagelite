@@ -11,18 +11,18 @@ class Api::TicketsController < ApplicationController
     end
 
     def index
-       
         # @tickets.user_id = current_user.id
         @tickets = Ticket.where(user_id: current_user.id)
     end
     
     def destroy
+        # debugger
         @ticket = Ticket.find(params[:id])
         # @tickets = Ticket.where(user_id: params[:user_id])
 
          if @ticket
             @ticket.destroy
-           render 'api/tickets/index'
+           render :show
          else
             render json: @ticket.errors.full_messages, status: 422
          end  

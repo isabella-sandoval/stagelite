@@ -3,10 +3,11 @@ import { createEvent, fetchEvent, fetchEvents } from '../../actions/event_action
 
 import EventForm from './event_form';
 
-const mSTP = (state) => ({
+const mSTP = (state, ownProps) => ({
     formType: 'new',
     events: Object.values(state.entities.events),
     errors: Object.values(state.errors.events),
+    eventId: ownProps.match.params.eventId,
     currentUser: state.session.id
 });
 

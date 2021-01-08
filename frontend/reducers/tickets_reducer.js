@@ -11,12 +11,12 @@ const ticketsReducer = (oldState = {}, action) => {
         case RECEIVE_TICKET:
             return Object.assign({}, oldState, { [action.ticket.id]: action.ticket });
         case RECEIVE_TICKETS:
-            return Object.assign({}, oldState, action.tickets);
-            
+            // debugger
+            return action.tickets
         case REMOVE_TICKET:
-            delete oldState[action.id];
-            return oldState;
-
+            let newState = Object.assign({}, oldState)
+            delete newState[action.id];
+            return newState;
         default:
             return oldState;
     }

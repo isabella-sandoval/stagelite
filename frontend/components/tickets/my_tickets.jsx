@@ -3,17 +3,27 @@ import { Link } from 'react-router-dom';
 import MyTicketItem from './my_ticket_item';
 
 class MyTickets extends React.Component {
-  // constructor(props) {
-  //   super(props);
+  constructor(props) {
+    super(props);
+    this.getEvent = this.getEvent.bind(this)
+    // this.removeTicket = this.removeTicket.bind(this);
+  }
 
-  //   this.removeTicket = this.removeTicket.bind(this);
-  // }
+
+  getEvent(eventId){
+    let eventLookingFor;
+    this.props.events.forEach(event =>{
+      if(event.id === eventId){
+        eventLookingFor = event;
+      }
+    })
+    return eventLookingFor
+  }
 
   componentDidMount() {
-   this.props.fetchTickets(this.props.currentUser.id)
-    // this.props.fetchTickets(this.props.currentUser.id).then(() => {
-    //   this.props.fetchEvents();
-    // })
+    this.props.fetchTickets(this.props.currentUser.id)
+    this.props.fetchEvents()
+
   }
 
   // removeTicket(){
@@ -21,7 +31,8 @@ class MyTickets extends React.Component {
   // };
 
   render() {
-    
+    // console.log(this.props.events)
+    // debugger
     if (this.props.events && (this.props.tickets.length >= 1)) {
       return (
         <div className="my-tickets">
@@ -32,28 +43,32 @@ class MyTickets extends React.Component {
                 <ul>
                   {this.props.tickets.map(ticket => {
                     return <MyTicketItem
-                      // key={ticket.id}
+                      key={ticket.id}
                       ticket={ticket}
-                      event={this.props.events[ticket.event_id -1]} //broke
-                      deleteTicket ={this.props.deleteTicket}
-                      currentUser = {this.props.currentUser} />
-                  })}
+                      event={this.getEvent(ticket.event_id)}
+                      deleteTicket={this.props.deleteTicket}
+                      currentUser={this.props.currentUser} 
+                      fetchTickets={this.props.fetchTickets}
+                      fetchEvents = {this.props.fetchEvents}
+                      />
+                  })
+                  }
                 </ul>
               </div>
             </div>
           </div>
-                  )
+          )
 
         </div>
       )
-
     } else {
-      return <div className="no-tickets-message">You have not RSVP'd to any events yet.<div>
+      return (
+      <div className="no-tickets-message">You have not RSVP'd to any events yet.<div>
           <br></br>
           <Link to="/"> Check out our upcoming events!</Link>
         </div>
       </div>
-    }
+      )}
   }
 }
 

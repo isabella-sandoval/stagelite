@@ -4,30 +4,36 @@ import { Link } from 'react-router-dom';
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
-// class MyTicketItem extends React.Component {
-//  constructor(props) {
-//     super(props);
+class MyTicketItem extends React.Component {
+ constructor(props) {
+    super(props);
 
-//     this.state={
-//         updated:'',
-//     }
-//     this.removeTicket = this.removeTicket.bind(this);
-//   }
+   this.state = {
+       tickets: []
+   }
+    this.removeTicket = this.removeTicket.bind(this);
+  }
 
 //   { this.props.history.push(`/myrsvp`) }
-//   removeTicket(tic){
-//     //   this.props.deleteTicket(tic).then(this.setState({ updated: 'yes' }))
-//       this.props.deleteTicket(tic).then(()=>this.props.history.push(`/${this.props.currentUser}/myrsvp`));
-//   };
+  removeTicket(tic){
+    // debugger
+      // this.props.deleteTicket(tic).then(()=>this.props.history.push(`/myrsvp`));
+      this.props.deleteTicket(tic).then(()=>this.setState({tickets: this.props.fetchTickets()}));
+    //   console.log(this.state.count)
+  };
 
-// render(){
-//       const {event, ticket, key, deleteTicket } = this.props
-//     return (
-        const MyTicketItem = ({ ticket, event, deleteTicket, currentUser }) => {
-            return (
+  componentDidMount(){
+      this.props.fetchEvents();
+  }
+
+render(){
+    const { event, ticket, deleteTicket } = this.props
+    if (!event) return null
+    return (
         <div className='event-index-item'>
 
-                    <button className='remove-ticket' onClick={() => deleteTicket(ticket.id).then(this.props.history.push(`/myrsvp`))}>X</button>
+            <button className='remove-ticket' onClick={() => this.removeTicket(ticket.id)}>X</button>
+            {/* <div className='remove-ticket' onClick={()=> this.removeTicket(ticket.id)}>X</div> */}
 
             <Link className="event-ind-link" to={`/event/${event.id}`}>
                 <img className='event-image' src={event.img_url} />
@@ -45,8 +51,10 @@ const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
     )
 }
+}
+
 
 
 export default MyTicketItem;
 
-{/* <button className='remove-ticket' onClick={() => deleteTicket(ticket.id).then(() => this.forceUpdate())}>X</button> */}
+// {/* <button className='remove-ticket' onClick={() => deleteTicket(ticket.id).then(() => this.forceUpdate())}>X</button> */}
