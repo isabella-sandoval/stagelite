@@ -45,8 +45,9 @@ export const fetchEvents = () => dispatch => {
 
 
 export const createEvent = (event) => dispatch => {
-    return EventApiUtil.createEvent(event).then(event => 
-        dispatch(receiveEvent(event)),
+    return EventApiUtil.createEvent(event).then(event => {
+        debugger
+        return dispatch(receiveEvent(event))},
             errors => dispatch(receiveErrors(errors.responseJSON)))
 };
 

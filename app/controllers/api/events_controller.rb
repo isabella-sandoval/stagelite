@@ -5,6 +5,7 @@ class Api::EventsController < ApplicationController
 
     if @event.save
       # @event = Event.find(params[:id])
+      debugger
       render "api/events/show"
   
 

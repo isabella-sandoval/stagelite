@@ -14,10 +14,10 @@ const mSTP = (state, ownProps) => {
 const mDTP = dispatch => {
     return {
         fetchEvent: (id) => dispatch(fetchEvent(id)),
-        fetchTickets: userId => dispatch(fetchTickets(userId)),
         fetchEvents: () => dispatch(fetchEvents()),
+        deleteEvent: id => dispatch(deleteEvent(id)),
         rsvpTicket: (ticket) => dispatch(rsvpTicket(ticket)),
-        deleteEvent: id => dispatch(deleteEvent(id))
+        fetchTickets: userId => dispatch(fetchTickets(userId))
     };
 };
 

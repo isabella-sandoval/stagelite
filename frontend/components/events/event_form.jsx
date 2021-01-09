@@ -37,15 +37,6 @@ class EventForm extends React.Component{
             this.setState({ [field]: e.currentTarget.value })
         }
     }
-    getEvent(eventId) {
-        let eventLookingFor;
-        this.props.events.forEach(event => {
-            if (event.id === eventId) {
-                eventLookingFor = event;
-            }
-        })
-        return eventLookingFor
-    }
 
     handleSubmit(e) {
         e.preventDefault();
@@ -77,10 +68,14 @@ class EventForm extends React.Component{
         if (this.props.formType === 'edit') {
             formData.append('event[id]', this.state.id);
             this.props.processForm(formData).then(()=>{this.props.history.push(`/event/${this.props.eventId}`)});
-        }else{
+        }
+        else{
     
-            this.props.processForm(formData).then(
-                this.props.history.push(`/event/${this.props.events[this.props.events.length-1].id+1}`));
+            this.props.processForm(formData).then((res)=>{
+                debugger
+                this.props.history.push(`/event/${res.id}`)
+            })
+                // this.props.history.push(`/event/${this.props.events[this.props.events.length-1].id+1}`));
         
         }
     }
@@ -120,14 +115,14 @@ class EventForm extends React.Component{
             fileReader.readAsDataURL(file);
         };
     }
-
-
-render(){
-    // console.log(this.props.eventId)
-    // console.log(this.state)
-    const preview = this.state.imgUrl ? <img className="preview" src={this.state.imgUrl} /> : null;
-    return(
-    <div>
+    
+    
+    render(){
+        // console.log(this.props.eventId)
+        // console.log(this.state)
+        const preview = this.state.imgUrl ? <img className="preview" src={this.state.imgUrl} /> : null;
+        return(
+            <div>
         <form className="event-form">
             <div className="basic-info-text">
                 <h1>Basic Info</h1>
@@ -190,17 +185,17 @@ render(){
 
             {/* <label >Event Genre:</label>
                 <select id="genre" className="genre">
-                    <option onChange={this.update('genre_id')} value='11'>Rock</option>
-                    <option onChange={this.update('genre_id')} value='12'>Funk</option>
-                    <option onChange={this.update('genre_id')} value='13'>Disco</option>
-                    <option onChange={this.update('genre_id')} value='14'>Pop</option>
-                    <option onChange={this.update('genre_id')} value='15'>Electronic</option>
-                </select> */}
+                <option onChange={this.update('genre_id')} value='11'>Rock</option>
+                <option onChange={this.update('genre_id')} value='12'>Funk</option>
+                <option onChange={this.update('genre_id')} value='13'>Disco</option>
+                <option onChange={this.update('genre_id')} value='14'>Pop</option>
+                <option onChange={this.update('genre_id')} value='15'>Electronic</option>
+            </select> */}
 
             {/* <input type="text"
                     value={this.state.ticket_link}
                     placeholder="ticket_link"
-                    onChange={this.update('ticket_link')} /> */}
+                onChange={this.update('ticket_link')} /> */}
 
                 <div><h1>Is this event 21+?</h1>
             </div>
@@ -249,10 +244,9 @@ render(){
                 
                     </div>
 
-            <div className='event-error-messages'>{this.props.errors ? this.props.errors.join(', ') : null}</div>
             
+            <div className='event-error-messages'>{this.props.errors ? this.props.errors.join(', ') : null}</div>
             <input className="event-submit" type="submit" value='Submit' onClick={this.handleSubmit}/>
-
             {this.props.formType === 'edit' ? <button className="event-submit" onClick={()=>this.props.deleteEvent(this.props.eventId).then(()=>this.props.history.push('/'))}>Delete Event</button> : null}
         </form>
 

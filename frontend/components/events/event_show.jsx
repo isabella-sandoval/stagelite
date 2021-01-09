@@ -40,9 +40,10 @@ class EventShow extends React.Component{
     
     
     componentDidMount(){
-        const eventId = this.props.match.params.eventId;
-        this.props.fetchEvents().then(this.props.fetchEvent(eventId));
+        this.props.fetchEvents();
+        // const eventId = this.props.match.params.eventId;
         // this.props.fetchTickets(this.props.currentUser.id);
+        // this.props.fetchEvent(eventId).then(this.props.fetchEvents());
     }
 
     render(){
@@ -50,8 +51,8 @@ class EventShow extends React.Component{
         const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
         const { event } = this.props;
         
-        if(!this.props.event) {return null}
-        else{
+        if (!this.props.event) return null
+        
        return(
             <div className="show-container">
                 <div className="event-show-container">
@@ -105,9 +106,6 @@ class EventShow extends React.Component{
                         
            </div>
         )}
-
-
-        }
 
 }
 
