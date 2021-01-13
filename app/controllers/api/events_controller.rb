@@ -4,21 +4,18 @@ class Api::EventsController < ApplicationController
     @event.organizer_id = current_user.id
 
     if @event.save
-      # @event = Event.find(params[:id])
-      debugger
+      # debugger
       render "api/events/show"
-  
-
     else
       render json: @event.errors.full_messages, status: 422
     end
 
- 
   end
 
   def update
     @event = Event.find(params[:event][:id])
     @event.update_attributes(event_params)
+    @event.organizer_id = current_user.id
 
     if @event.save
       render "api/events/show"
@@ -30,7 +27,6 @@ class Api::EventsController < ApplicationController
 
   def index
     @events = Event.all
-    
   end
 
   def show
@@ -53,3 +49,11 @@ class Api::EventsController < ApplicationController
 end
 
 
+# @event.id do
+#     json.extract! @event, :id, :title, :venue, :address, :capacity, :price, :age_restriction, :ticket_link, :genre_id, :organizer_id, :quantity
+
+
+
+
+#         json.imgUrl url_for(@event.photo)
+# end

@@ -1,5 +1,5 @@
-@event.id do
-       json.extract! @event, :title, :venue, :address, :capacity, :price, :age_restriction, :ticket_link, :genre_id, :organizer_id
+
+    json.extract! @event, :id, :title, :venue, :address, :capacity, :price, :age_restriction, :ticket_link, :genre_id, :organizer_id, :quantity
 
         json.date do
             json.month @event.date.month
@@ -13,7 +13,5 @@
             json.min @event.time.min
             json.time @event.time
         end
-
-
-        json.imgUrl url_for(@event.photo)
-end
+        
+    json.imgUrl url_for(@event.photo)

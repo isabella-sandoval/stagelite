@@ -40,27 +40,21 @@ class EventForm extends React.Component{
 
     handleSubmit(e) {
         e.preventDefault();
-        const UserEvent = Object.assign({}, this.state);
         const formData = new FormData();
-        const curUser = this.props.currentUser;
-
 
         formData.append('event[title]', this.state.title);
         formData.append('event[venue]', this.state.venue);
+        formData.append('event[address]', this.state.address);
         formData.append('event[date]', this.state.date);
         formData.append('event[time]', this.state.time);
         formData.append('event[price]', this.state.price);
         formData.append('event[capacity]', this.state.capacity);
-        formData.append('event[address]', this.state.address);
         formData.append('event[age_restriction]', this.state.age_restriction);
         formData.append('event[genre_id]', this.state.genre_id);
         formData.append('event[quantity]', this.state.quantity);
         formData.append('event[ticket_link]', this.state.ticket_link);
+        formData.append('event[imgUrl]', this.state.imgUrl);
         
-
-        // this.props.processForm(formData)
-        // console.log(this.props.events);
-
         if (this.state.photoFile) {
             formData.append('event[photo]', this.state.photoFile);
         }
@@ -70,11 +64,11 @@ class EventForm extends React.Component{
             this.props.processForm(formData).then(()=>{this.props.history.push(`/event/${this.props.eventId}`)});
         }
         else{
-    
-            this.props.processForm(formData).then((res)=>{
-                debugger
-                this.props.history.push(`/event/${res.id}`)
-            })
+            // debugger
+            this.props.processForm(formData).then(
+                (res)=>{
+                    debugger
+                    this.props.history.push(`/event/${res.event.id}`)})
                 // this.props.history.push(`/event/${this.props.events[this.props.events.length-1].id+1}`));
         
         }
@@ -90,6 +84,8 @@ class EventForm extends React.Component{
                     this.setState(event);
                     // this.setState({ id: event.id });
                     this.setState({ title: event.title });
+                    this.setState({ venue: event.venue });
+                    this.setState({ address: event.address });
                     this.setState({ time: event.time.time.slice(-13, -8) });
                     this.setState({ date: event.date.date });
                     this.setState({ price: event.price});

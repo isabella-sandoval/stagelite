@@ -1,7 +1,4 @@
-
-
 export const fetchEvent = id => {
-    
     return $.ajax({
         method: 'GET',
         url: `/api/events/${id}`
@@ -17,8 +14,8 @@ export const fetchEvents = () => {
 
 export const createEvent = (formData) => {
     return $.ajax({
-        url: '/api/events',
         method: 'POST',
+        url: '/api/events',
         data: formData,
         contentType: false,
         processData: false
@@ -27,8 +24,8 @@ export const createEvent = (formData) => {
 
 export const updateEvent = (formData) => {
     return $.ajax({
-        url: `/api/events/${formData.get("event[id]")}`,
         method: 'PATCH',
+        url: `/api/events/${formData.get("event[id]")}`,
         data: formData,
         contentType: false,
         processData: false
