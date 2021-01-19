@@ -5,7 +5,6 @@ import { fetchTickets, deleteTicket } from '../../actions/ticket_actions';
 import { fetchEvents } from '../../actions/event_actions';
 
 const mSTP = state => {
-    // debugger
     return ({
         currentUser: state.entities.users[state.session.id],
         tickets: Object.values(state.entities.tickets),

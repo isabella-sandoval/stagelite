@@ -67,7 +67,7 @@ class EventForm extends React.Component{
             // debugger
             this.props.processForm(formData).then(
                 (res)=>{
-                    debugger
+                    
                     this.props.history.push(`/event/${res.event.id}`)})
                 // this.props.history.push(`/event/${this.props.events[this.props.events.length-1].id+1}`));
         
