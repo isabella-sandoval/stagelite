@@ -5,6 +5,15 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+  <meta property="og:title" content="Stagelite" />
+  <meta property='og:image' content="<%= image_url('stagelite_meta_img.png') %>"/>
+  <meta property="og:description"
+      content="Full stack event ticketing site inspired by Eventbrite."
+  />
+  <meta property="og:url"
+      content="https://stagelite.herokuapp.com/#/"
+  />
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= favicon_link_tag asset_path('favicon.png') %>
