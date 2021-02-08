@@ -17,7 +17,6 @@ class Search extends React.Component {
 
     render() {
         const { events } = this.props;
-        const search = this.props.search;
 
 
         if (events.length === 0) {

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router';
 import SearchBar from '../search/search';
-// import search_bar_container from './search_bar_container';
 import EventIndexItem from './event_index_item';
 
 
