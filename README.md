@@ -26,14 +26,13 @@ This site was built on a Ruby on Rails framework for the backend with active rec
 * PostgreSQL
 * Webpack
 * Amazon AWS S3
-* Google Maps Javascript API
 
 ## Features
 * Create events
 * Edit events
 * Manage events created
-* Browse events by genre
-* Get tickets for an event
+* Browse events by title & city
+* RSVP for an event
 
 ### User Auth 
 
@@ -47,10 +46,10 @@ This site was built on a Ruby on Rails framework for the backend with active rec
 
 
 * Users can create, edit and manage their events.
-* Createres can search events by genre and once logged in the user can buy tickets to other users events.
+* Createres can search events by genre and once logged in the user can RSVP to other users events.
 
 
 ### Dynamic Nav-bar
-  * The nav bar changes depending on if a user a logged in or not.
+  * The nav bar changes depending on if a user is logged in or not.
   * The nav-bar is located in a seperate component to keep the code clean and organized. 
 ---
