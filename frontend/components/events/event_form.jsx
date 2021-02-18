@@ -1,7 +1,5 @@
 import React from 'react';
-import eventsReducer from '../../reducers/events_reducer';
-import { Redirect } from 'react-router';
-import { deleteEvent } from '../../util/event_api_util';
+
 
 class EventForm extends React.Component{
     constructor(props){
