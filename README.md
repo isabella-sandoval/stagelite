@@ -1,7 +1,8 @@
 # Stagelite
 ###### [Live Site](https://stagelite.herokuapp.com/#/)
 
-![screenshot](app/assets/images/stagelite_screenshot.png))
+
+<p align="center"> <img src="app/assets/images/stagelite_screenshot.png" /> </p>
 
 ## Table of Contents
 
