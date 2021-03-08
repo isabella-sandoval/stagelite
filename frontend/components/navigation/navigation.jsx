@@ -1,6 +1,7 @@
 
 import React from "react";
 import { Link } from 'react-router-dom';
+import HelpPopup from './help/help_popup';
 
 const Navigation = ({ currentUser, logout }) => {
     const loggedin = (
@@ -76,6 +77,8 @@ const Navigation = ({ currentUser, logout }) => {
                         </a>
                     </div>
 
+                    <Link className="help-dropdown">Help</Link>
+                    
                     <div className="help-dropdown">Help</div>
                     
 
