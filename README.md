@@ -2,8 +2,6 @@
 ###### [Live Site](https://stagelite.herokuapp.com/#/)
 
 
-<p> <img src="app/assets/images/stagelite_screenshot.png" /> </p>
-
 ## Table of Contents
 
   * [Background](#background)
