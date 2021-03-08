@@ -2,7 +2,7 @@
 ###### [Live Site](https://stagelite.herokuapp.com/#/)
 
 
-<p align="center"> <img src="app/assets/images/stagelite_screenshot.png" /> </p>
+<p> <img src="app/assets/images/stagelite_screenshot.png" /> </p>
 
 ## Table of Contents
 
