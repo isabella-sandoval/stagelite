@@ -1,7 +1,8 @@
 
 import React from "react";
 import { Link } from 'react-router-dom';
-import HelpPopup from './help/help_popup';
+import HelpPopup from '../help/help_popup';
+
 
 const Navigation = ({ currentUser, logout }) => {
     const loggedin = (
@@ -77,9 +78,10 @@ const Navigation = ({ currentUser, logout }) => {
                         </a>
                     </div>
 
-                    <Link className="help-dropdown">Help</Link>
+                    {/* <Link className="help-dropdown">Help</Link> */}
+                    <div className="help-dropdown" onClick={HelpPopup}>Help </div>
                     
-                    <div className="help-dropdown">Help</div>
+                    {/* <div className="help-dropdown">Help</div> */}
                     
 
                     <Link className="create-event-loggedout" to="/login">Create Event</Link>
