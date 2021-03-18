@@ -4,7 +4,6 @@ class Api::EventsController < ApplicationController
     @event.organizer_id = current_user.id
 
     if @event.save
-      # debugger
       render "api/events/show"
     else
       render json: @event.errors.full_messages, status: 422
