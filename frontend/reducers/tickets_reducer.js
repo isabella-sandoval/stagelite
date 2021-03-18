@@ -11,7 +11,6 @@ const ticketsReducer = (oldState = {}, action) => {
         case RECEIVE_TICKET:
             return Object.assign({}, oldState, { [action.ticket.id]: action.ticket });
         case RECEIVE_TICKETS:
-            // debugger
             return action.tickets
         case REMOVE_TICKET:
             let newState = Object.assign({}, oldState)

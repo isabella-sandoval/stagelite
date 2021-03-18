@@ -62,12 +62,10 @@ class EventForm extends React.Component{
             this.props.processForm(formData).then(()=>{this.props.history.push(`/event/${this.props.eventId}`)});
         }
         else{
-            // debugger
             this.props.processForm(formData).then(
                 (res)=>{
                     
                     this.props.history.push(`/event/${res.event.id}`)})
-                // this.props.history.push(`/event/${this.props.events[this.props.events.length-1].id+1}`));
         
         }
     }
@@ -112,8 +110,6 @@ class EventForm extends React.Component{
     
     
     render(){
-        // console.log(this.props.eventId)
-        // console.log(this.state)
         const preview = this.state.imgUrl ? <img className="preview" src={this.state.imgUrl} /> : null;
         return(
             <div>
@@ -176,20 +172,6 @@ class EventForm extends React.Component{
                 pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$"
                 onChange={this.update('price')} />
 
-
-            {/* <label >Event Genre:</label>
-                <select id="genre" className="genre">
-                <option onChange={this.update('genre_id')} value='11'>Rock</option>
-                <option onChange={this.update('genre_id')} value='12'>Funk</option>
-                <option onChange={this.update('genre_id')} value='13'>Disco</option>
-                <option onChange={this.update('genre_id')} value='14'>Pop</option>
-                <option onChange={this.update('genre_id')} value='15'>Electronic</option>
-            </select> */}
-
-            {/* <input type="text"
-                    value={this.state.ticket_link}
-                    placeholder="ticket_link"
-                onChange={this.update('ticket_link')} /> */}
 
                 <div><h1>Is this event 21+?</h1>
             </div>

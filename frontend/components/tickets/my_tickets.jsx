@@ -28,8 +28,6 @@ class MyTickets extends React.Component {
 
 
   render() {
-    // console.log(this.props.events)
-    // debugger
     if (this.props.events && (this.props.tickets.length >= 1)) {
       return (
         <div className="my-tickets">

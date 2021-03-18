@@ -46,13 +46,3 @@ class Api::EventsController < ApplicationController
   
   
 end
-
-
-# @event.id do
-#     json.extract! @event, :id, :title, :venue, :address, :capacity, :price, :age_restriction, :ticket_link, :genre_id, :organizer_id, :quantity
-
-
-
-
-#         json.imgUrl url_for(@event.photo)
-# end

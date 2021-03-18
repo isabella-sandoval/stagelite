@@ -14,12 +14,9 @@ class MyTicketItem extends React.Component {
     this.removeTicket = this.removeTicket.bind(this);
   }
 
-//   { this.props.history.push(`/myrsvp`) }
+
   removeTicket(tic){
-    // debugger
-      // this.props.deleteTicket(tic).then(()=>this.props.history.push(`/myrsvp`));
       this.props.deleteTicket(tic).then(()=>this.setState({tickets: this.props.fetchTickets()}));
-    //   console.log(this.state.count)
   };
 
   componentDidMount(){
@@ -56,5 +53,3 @@ render(){
 
 
 export default MyTicketItem;
-
-// {/* <button className='remove-ticket' onClick={() => deleteTicket(ticket.id).then(() => this.forceUpdate())}>X</button> */}
