@@ -41,9 +41,7 @@ class EventShow extends React.Component{
     
     componentDidMount(){
         this.props.fetchEvents();
-        // const eventId = this.props.match.params.eventId;
-        // this.props.fetchTickets(this.props.currentUser.id);
-        // this.props.fetchEvent(eventId).then(this.props.fetchEvents());
+     
     }
 
     render(){
@@ -64,11 +62,10 @@ class EventShow extends React.Component{
                         <div className='event-date'>
                            <p className='month'>{months[event.date.month - 1]}</p>
                            <p className='day'>{event.date.day}</p>
-                            {/* <p>{days[event.date.day % 7]} {months[event.date.month - 1]} {event.date.day}, {event.date.year}</p> */}
                         </div>
                    
                         <p className='event-title'>{event.title}</p>
-                        {/* <p className='event-genre'>{event.genre_id}</p> */}
+        
                        {event.organizer_id === this.props.currentUser ? <p className="organizer">You are the organizer</p> : <p className="organizer">organizer:{event.organizer_id}</p>}
                         <p className="venue-name">{event.venue}</p>
                         <p className='address'> {event.address}</p>
@@ -85,7 +82,7 @@ class EventShow extends React.Component{
                             <div className="date">{event.time.hour}:0{event.time.min} </div> :
                             <div className="date">{event.time.hour}:{event.time.min} </div>
                             }
-                       {/* {event.organizer_id === this.props.currentUser ? <button className='edit_event'><Link className='option' to={`/event/${this.props.event.id}/edit`}>Edit</Link></button> : <button className='tickets' onClick={this.rsvp}>RSVP</button>} */}
+                   
                        {event.organizer_id === this.props.currentUser ? <button className='edit_event' onClick= {()=>this.props.history.push(`/event/${this.props.event.id}/edit`)}>Edit</button> : <button className='tickets' onClick={this.rsvp}>RSVP</button>}
                     </div>
 
