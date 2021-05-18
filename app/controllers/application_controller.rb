@@ -8,12 +8,6 @@ class ApplicationController < ActionController::Base
         # User.find_by(session_token: session[:session_token])
     end
 
-    # def require_logged_in
-    #     unless current_user
-    #         render errors
-    #     end
-    # end
-
     def logged_in?
         !!current_user
     end
