@@ -27,7 +27,7 @@ class EventIndex extends React.Component {
                 </div>
                 
                 <div className="splash-text2">
-                    <p>post COVID utopian!</p>
+                    <p>post COVID utopia!</p>
                 </div>
                 
                 <div className="all-events-container">

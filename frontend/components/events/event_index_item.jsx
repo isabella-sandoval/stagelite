@@ -15,15 +15,12 @@ class EventIndexItem extends React.Component {
                     
                         <img className='event-image' src={img_url}/>
                         <div className="all-event-info">
-                            <p className='event-date-time'>
-                                <p>{days[date.day % 7]}, {months[date.month - 1]} {date.day}, {date.year}</p>
-                    
-                            </p>
-                            <p className="event-info">
+                            <p className='event-date-time'>{days[date.day % 7]}, {months[date.month - 1]} {date.day}</p>
+                        <p className='event-ven'>{venue} ({age_restriction ? <p className='age-rest'>21+</p> : <p className='age-rest'>All Ages</p>})</p>
+                            
+                            <span className="event-info">
                                 <p className='title'>{title}</p>
-                                {/* <p className='age-rest'>Event 21+? {age_restriction}</p> */}
-                                {/* {quantity >= capacity} ? <p>Sold out</p> : <p className='ticket-link'>{ticket_link}</p> */}
-                            </p>
+                            </span>
                     
                     </div>
                 </Link>
