@@ -1,0 +1,14 @@
+[build]
+  publish = "public"
+  command = "USE_FREEDESKTOP_PLACEHOLDER=true bundle install && npm install && bundle exec rake assets:precompile RAILS_ENV=production SECRET_KEY_BASE=dummy"
+
+[build.environment]
+  RUBY_VERSION = "3.2.2"
+  NODE_VERSION = "18"
+  NPM_VERSION = "9"
+  USE_FREEDESKTOP_PLACEHOLDER = "true"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
