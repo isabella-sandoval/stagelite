@@ -18,11 +18,10 @@ services:
       - key: AWS_BUCKET
         sync: false
 
-  - type: web
+  - type: static
     name: stagelite-frontend
-    env: node
     buildCommand: cd frontend && npm install && npm run build
-    startCommand: npx serve -s frontend/build -l 3000
+    publishDir: frontend/build
     envVars:
       - key: REACT_APP_API_URL
         value: /api
