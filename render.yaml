@@ -1,7 +1,7 @@
 services:
-  - type: web
-    name: stagelite-backend
-    env: ruby
+  - name: stagelite-backend
+    type: web
+    runtime: ruby
     buildCommand: bundle install && bundle exec rake assets:precompile db:migrate
     startCommand: bundle exec rails server -p 3000
     envVars:
@@ -18,11 +18,11 @@ services:
       - key: AWS_BUCKET
         sync: false
 
-  - type: web
-    name: stagelite-frontend
-    env: node
+  - name: stagelite-frontend
+    type: web
+    runtime: static
     buildCommand: cd frontend && npm install && npm run build
-    startCommand: npx serve -s frontend/build -l 3000
+    staticPublishPath: frontend/build
     envVars:
       - key: REACT_APP_API_URL
         value: /api
